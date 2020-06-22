@@ -1,0 +1,72 @@
+### YamlMime:Landing
+title: Documentação de padrões e soluções híbridos do Azure
+summary: Saiba como tirar partido dos exemplos de padrões e soluções híbridos no desenvolvimento da sua aplicação. O Azure e o Azure Stack permitem desenvolver aplicações híbridas, criadas num conjunto de serviços cloud inteligentes e de edge inteligente.
+metadata:
+  title: Documentação de padrões e soluções híbridos do Azure
+  description: Saiba como tirar partido dos exemplos de padrões e soluções híbridos no desenvolvimento da sua aplicação. O Azure e o Azure Stack permitem desenvolver aplicações híbridas, criadas num conjunto de serviços cloud inteligentes e de edge inteligente.
+  ms.service: azure-stack
+  ms.topic: landing-page
+  author: BryanLa
+  ms.author: bryanla
+  ms.date: 10/31/2019
+  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
+  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.translationtype: HT
+  ms.contentlocale: pt-PT
+  ms.lasthandoff: 06/17/2020
+  ms.locfileid: "84909767"
+landingContent:
+- title: Sobre os padrões e soluções híbridos
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: O que são os exemplos de padrões e soluções híbridos?
+      url: overview-patterns-solution-examples.md
+  - linkListType: concept
+    links:
+    - text: Considerações de design de aplicações híbridas
+      url: overview-app-design-considerations.md
+- title: Explorar padrões híbridos
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Dimensionamento entre clouds
+      url: pattern-cross-cloud-scale.md
+    - text: CI/CD híbrida do DevOps
+      url: pattern-cicd-pipeline.md
+    - text: Deteção de visitantes (retalho)
+      url: pattern-retail-footfall-detection.md
+    - text: Aplicação distribuída geograficamente
+      url: pattern-geo-distributed.md
+- title: Implementar exemplos de soluções híbridas
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Dimensionamento entre clouds
+      url: solution-deployment-guide-cross-cloud-scaling.md
+    - text: CI/CD híbrida do DevOps
+      url: https://aka.ms/hybriddevopsdeploy
+    - text: Deteção de visitantes (retalho)
+      url: solution-deployment-guide-retail-footfall-detection.md
+    - text: Aplicação distribuída geograficamente
+      url: solution-deployment-guide-geo-distributed.md
+- title: Cenário de deteção de visitantes para retalho
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Padrão
+      url: pattern-retail-footfall-detection.md
+  - linkListType: tutorial
+    links:
+    - text: Guia de implementação de soluções
+      url: solution-deployment-guide-retail-footfall-detection.md
+- title: Dimensionamento entre clouds com um cenário de dados no local
+  linkLists:
+  - linkListType: architecture
+    links:
+    - text: Padrão
+      url: pattern-cross-cloud-scale-onprem-data.md
+  - linkListType: tutorial
+    links:
+    - text: Guia de implementação de soluções
+      url: solution-deployment-guide-cross-cloud-scaling-onprem-data.md
