@@ -7,16 +7,16 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ff6d5b9667e63a6b8d232b6dd93db2d8b12fd46d
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 85b859457b9b54a973c5fc23329b927212b60a07
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911041"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477087"
 ---
 # <a name="deploy-a-sql-server-2016-availability-group-to-azure-and-azure-stack-hub"></a>Implementar um grupo de disponibilidade SQL Server 2016 para Azure e Azure Stack Hub
 
-Este artigo irá passar por uma implementação automatizada de um cluster básico altamente disponível (HA) SQL Server 2016 Enterprise com um site assíncrona de recuperação de desastres (DR) através de dois ambientes Azure Stack Hub. Para saber mais sobre o SQL Server 2016 e alta disponibilidade, consulte [sempre em grupos de disponibilidade: uma solução de alta disponibilidade e recuperação de desastres.](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016)
+Este artigo irá passar por uma implementação automatizada de um cluster básico altamente disponível (HA) SQL Server 2016 Enterprise com um site assíncrona de recuperação de desastres (DR) através de dois ambientes Azure Stack Hub. Para saber mais sobre o SQL Server 2016 e alta disponibilidade, consulte [sempre em grupos de disponibilidade: uma solução de alta disponibilidade e recuperação de desastres.](/sql/database-engine/availability-groups/windows/always-on-availability-groups-sql-server?view=sql-server-2016)
 
 Nesta solução, você construirá um ambiente de amostra para:
 
@@ -40,9 +40,9 @@ Nesta solução, você construirá um ambiente de amostra para:
 - Dois sistemas integrados Azure Stack Hub (Azure Stack Hub). Esta implementação não funciona no Kit de Desenvolvimento de Pilhas Azure (ASDK). Para saber mais sobre o Azure Stack Hub, consulte a visão geral da [Azure Stack](https://azure.microsoft.com/overview/azure-stack/).
 - Uma subscrição de inquilino em cada Azure Stack Hub.
   - **Tome nota de cada ID de subscrição e do ponto final do Azure Resource Manager para cada Azure Stack Hub.**
-- Um diretor de serviço Azure Ative (Azure AD) que tem permissões para a subscrição do inquilino em cada Azure Stack Hub. Você pode precisar de criar dois principais de serviço se os Azure Stack Hubs forem implantados contra diferentes inquilinos AD Azure. Para aprender a criar um principal de serviço para o Azure Stack Hub, consulte [os principais dos serviços create para dar às aplicações acesso aos recursos do Azure Stack Hub.](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals)
+- Um diretor de serviço Azure Ative (Azure AD) que tem permissões para a subscrição do inquilino em cada Azure Stack Hub. Você pode precisar de criar dois principais de serviço se os Azure Stack Hubs forem implantados contra diferentes inquilinos AD Azure. Para aprender a criar um principal de serviço para o Azure Stack Hub, consulte [os principais dos serviços create para dar às aplicações acesso aos recursos do Azure Stack Hub.](/azure-stack/user/azure-stack-create-service-principals)
   - **Tome nota da identificação de cada pedido do diretor de serviço, segredo do cliente e nome do inquilino (xxxxx.onmicrosoft.com).**
-- SQL Server 2016 Enterprise sindicalizado para cada Azure Stack Hub's Marketplace. Para saber mais sobre a sindicalização do mercado, consulte [itens de Mercado de Descarregamento para Azure Stack Hub.](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item)
+- SQL Server 2016 Enterprise sindicalizado para cada Azure Stack Hub's Marketplace. Para saber mais sobre a sindicalização do mercado, consulte [itens de Mercado de Descarregamento para Azure Stack Hub.](/azure-stack/operator/azure-stack-download-azure-marketplace-item)
     **Certifique-se de que a sua organização tem as licenças SQL apropriadas.**
 - [Docker para Windows](https://docs.docker.com/docker-for-windows/) instalado na sua máquina local.
 
@@ -105,6 +105,6 @@ As imagens do Docker para cada implementação eliminam problemas de dependênci
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- Utilize o SQL Server Management Studio para falhar manualmente sobre o cluster. Consulte [executar uma falha manual forçada de um grupo de disponibilidade sempre disponível (SQL Server)](https://docs.microsoft.com/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
+- Utilize o SQL Server Management Studio para falhar manualmente sobre o cluster. Consulte [executar uma falha manual forçada de um grupo de disponibilidade sempre disponível (SQL Server)](/sql/database-engine/availability-groups/windows/perform-a-forced-manual-failover-of-an-availability-group-sql-server?view=sql-server-2017)
 - Saiba mais sobre aplicativos híbridos em nuvem. Consulte [soluções de nuvem híbrida.](https://aka.ms/azsdevtutorials)
 - Utilize os seus próprios dados ou modifique o código para esta amostra no [GitHub](https://github.com/Azure-Samples/azure-intelligent-edge-patterns).

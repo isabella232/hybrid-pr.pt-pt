@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: b34ba7c10ff5f658d645923ae8b6de2fb2607ccb
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: f6064aaa1087a3c0cfc26e09371e81752c777edb
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911447"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477274"
 ---
 # <a name="deploy-a-highly-available-mongodb-solution-to-azure-and-azure-stack-hub"></a>Implemente uma solução MongoDB altamente disponível para O Azure e Azure Stack Hub
 
@@ -40,9 +40,9 @@ Nesta solução, criará um ambiente de amostra para:
 - Dois sistemas integrados Azure Stack Hub (Azure Stack Hub). Esta implementação não funciona no Kit de Desenvolvimento de Pilhas Azure (ASDK). Para saber mais sobre o Azure Stack Hub, veja [o que é O Azure Stack Hub?](https://azure.microsoft.com/products/azure-stack/hub/)
   - Uma subscrição de inquilino em cada Azure Stack Hub. 
   - **Tome nota de cada ID de subscrição e do ponto final do Azure Resource Manager para cada Azure Stack Hub.**
-- Um diretor de serviço Azure Ative (Azure AD) que tem permissões para a subscrição do inquilino em cada Azure Stack Hub. Você pode precisar de criar dois principais de serviço se os Azure Stack Hubs forem implantados contra diferentes inquilinos AD Azure. Para aprender a criar um principal de serviço para o Azure Stack Hub, consulte [utilizar uma identidade de aplicação para aceder aos recursos do Azure Stack Hub.](https://docs.microsoft.com/azure-stack/user/azure-stack-create-service-principals)
+- Um diretor de serviço Azure Ative (Azure AD) que tem permissões para a subscrição do inquilino em cada Azure Stack Hub. Você pode precisar de criar dois principais de serviço se os Azure Stack Hubs forem implantados contra diferentes inquilinos AD Azure. Para aprender a criar um principal de serviço para o Azure Stack Hub, consulte [utilizar uma identidade de aplicação para aceder aos recursos do Azure Stack Hub.](/azure-stack/user/azure-stack-create-service-principals)
   - **Tome nota da identificação de cada pedido do diretor de serviço, segredo do cliente e nome do inquilino (xxxxx.onmicrosoft.com).**
-- Ubuntu 16.04 sindicado para cada Azure Stack Hub's Marketplace. Para saber mais sobre a sindicalização do mercado, consulte [itens de Mercado de Descarregamento para Azure Stack Hub.](https://docs.microsoft.com/azure-stack/operator/azure-stack-download-azure-marketplace-item)
+- Ubuntu 16.04 sindicado para cada Azure Stack Hub's Marketplace. Para saber mais sobre a sindicalização do mercado, consulte [itens de Mercado de Descarregamento para Azure Stack Hub.](/azure-stack/operator/azure-stack-download-azure-marketplace-item)
 - [Docker para Windows](https://docs.docker.com/docker-for-windows/) instalado na sua máquina local.
 
 ## <a name="get-the-docker-image"></a>Obtenha a imagem do Docker

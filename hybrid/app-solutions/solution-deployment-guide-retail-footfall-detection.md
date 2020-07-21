@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6913cc522da447092dad0af24e148a3b2576495c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5f2e18e164e54f60b1bb7a14026a0c75c7d7ce69
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910898"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477172"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Implementar uma solução de deteção de base de IA utilizando o Azure e o Azure Stack Hub
 
@@ -44,7 +44,7 @@ Antes de começar com este guia de implantação, certifique-se de que:
 - Crie dois diretores de serviço no seu diretório:
   - Um conjunto para uso com recursos Azure, com acesso no âmbito de subscrição Azure.
   - Um conjunto para uso com recursos do Azure Stack Hub, com acesso no âmbito de subscrição do Azure Stack Hub.
-  - Para saber mais sobre a criação de diretores de serviços e autorizar o acesso, consulte [utilizar uma identidade de aplicação para aceder aos recursos.](/azure-stack/operator/azure-stack-create-service-principals.md) Se preferir utilizar o Azure CLI, consulte [criar um rente-chefe de serviço Azure com Azure CLI](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
+  - Para saber mais sobre a criação de diretores de serviços e autorizar o acesso, consulte [utilizar uma identidade de aplicação para aceder aos recursos.](/azure-stack/operator/azure-stack-create-service-principals.md) Se preferir utilizar o Azure CLI, consulte [criar um rente-chefe de serviço Azure com Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest).
 - Implementar serviços cognitivos Azure em Azure ou Azure Stack Hub.
   - Primeiro, [saiba mais sobre os Serviços Cognitivos.](https://azure.microsoft.com/services/cognitive-services/)
   - Em [seguida, visite implementar os Serviços Cognitivos Azure para o Azure Stack Hub](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) para implantar serviços cognitivos no Azure Stack Hub. Primeiro tem de se inscrever para ter acesso à pré-visualização.

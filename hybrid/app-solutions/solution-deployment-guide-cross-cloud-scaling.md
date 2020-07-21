@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 740a8c0ec904fe8eb3f9744626bc9dd6655bdb52
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911528"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477342"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implemente uma aplicação que escala a nuvem cruzada usando O Azure e Azure Stack Hub
 
@@ -68,7 +68,7 @@ A solução cross-cloud garante uma gestão perfeita e uma interface familiar en
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Obtenha um domínio personalizado e configuure DNS
 
-Atualize o ficheiro da zona DNS para o domínio. A Azure AD verificará a propriedade do nome de domínio personalizado. Utilize [o Azure DNS](https://docs.microsoft.com/azure/dns/dns-getstarted-portal) para registos DNS Azure/Office 365/external DNS dentro do Azure, ou adicione a entrada de DNS [num registo DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Atualize o ficheiro da zona DNS para o domínio. A Azure AD verificará a propriedade do nome de domínio personalizado. Utilize [o Azure DNS](/azure/dns/dns-getstarted-portal) para registos DNS Azure/Office 365/external DNS dentro do Azure, ou adicione a entrada de DNS [num registo DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
 
 1. Registe um domínio personalizado com um registo público.
 2. Inicie sessão na entidade de registo de nome de domínio para o domínio. Um administrador aprovado pode ser necessário para fazer atualizações dns.
@@ -97,7 +97,7 @@ Repositórios do Azure
 
 ### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Criar implementação de aplicativos web autossuficientes para Serviços de Aplicações em ambas as nuvens
 
-1. Editar o ficheiro **WebApplication.csproj.** Selecione `Runtimeidentifier` e adicione `win10-x64` . (Ver [documentação de implantação independente.)](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)
+1. Editar o ficheiro **WebApplication.csproj.** Selecione `Runtimeidentifier` e adicione `win10-x64` . (Ver [documentação de implantação independente.)](/dotnet/core/deploying/deploy-with-vs#simpleSelf)
 
     ![Editar o ficheiro do projeto de aplicativo web](media/solution-deployment-guide-cross-cloud-scaling/image3.png)
 
@@ -113,7 +113,7 @@ Repositórios do Azure
 
     ![Adicione código à aplicação web](media/solution-deployment-guide-cross-cloud-scaling/image4.png)
 
-3. Executar a construção. O processo [de construção de implantação independente](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará artefactos que funcionam no Azure e no Azure Stack Hub.
+3. Executar a construção. O processo [de construção de implantação independente](/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará artefactos que funcionam no Azure e no Azure Stack Hub.
 
 ## <a name="use-an-azure-hosted-agent"></a>Use um agente azure hospedado
 
@@ -211,7 +211,7 @@ A Azure Pipelines e a Azure DevOps Services fornecem um oleoduto altamente confi
 21. Guarde todas as alterações.
 
 > [!Note]  
-> Algumas configurações para as tarefas podem ter sido definidas automaticamente como [variáveis ambientais](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa; em vez disso, o item ambiente parental deve ser selecionado para editar estas definições.
+> Algumas configurações para as tarefas podem ter sido definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa; em vez disso, o item ambiente parental deve ser selecionado para editar estas definições.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publicar no Azure Stack Hub via Visual Studio
 
@@ -254,7 +254,7 @@ Utilize [modelos de Gestor de Recursos Azure](https://azure.microsoft.com/resour
 
 #### <a name="create-self-contained-web-app-deployment-for-app-services-in-both-clouds"></a>Criar implementação de aplicativos web autossuficientes para Serviços de Aplicações em ambas as nuvens
 
-1. Editar o ficheiro **WebApplication.csproj:** Selecione `Runtimeidentifier` e adicione `win10-x64` . Para obter mais informações, consulte a documentação [de implantação autónoma.](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf)
+1. Editar o ficheiro **WebApplication.csproj:** Selecione `Runtimeidentifier` e adicione `win10-x64` . Para obter mais informações, consulte a documentação [de implantação autónoma.](/dotnet/core/deploying/deploy-with-vs#simpleSelf)
 
 2. Utilize o Team Explorer para verificar o código em Azure Repos.
 
@@ -268,7 +268,7 @@ Utilize [modelos de Gestor de Recursos Azure](https://azure.microsoft.com/resour
 
 3. Em **Arguments**, add **-r win10-x64** código. Esta adição é necessária para desencadear uma implantação independente com .NET Core.
 
-4. Executar a construção. O processo [de construção de implantação independente](https://docs.microsoft.com/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará artefactos que podem ser executados no Azure e no Azure Stack Hub.
+4. Executar a construção. O processo [de construção de implantação independente](/dotnet/core/deploying/deploy-with-vs#simpleSelf) publicará artefactos que podem ser executados no Azure e no Azure Stack Hub.
 
 #### <a name="use-an-azure-hosted-build-agent"></a>Use um agente de construção hospedado em Azure
 
@@ -329,7 +329,7 @@ Criar uma definição de lançamento é o passo final no processo de construçã
 23. Guarde todas as alterações.
 
 > [!Note]  
-> Algumas definições para tarefas de libertação são definidas automaticamente como [variáveis ambientais](https://docs.microsoft.com/azure/devops/pipelines/release/variables?view=vsts&tabs=batch#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa, mas podem ser modificadas nos itens do ambiente dos pais.
+> Algumas definições para tarefas de libertação são definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa, mas podem ser modificadas nos itens do ambiente dos pais.
 
 ## <a name="create-a-release"></a>Criar um lançamento
 
@@ -361,4 +361,4 @@ Um serviço multi-nuvem flexível e robusto proporciona segurança de dados, bac
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- Para saber mais sobre padrões de nuvem azure, consulte [padrões de design de nuvem.](https://docs.microsoft.com/azure/architecture/patterns)
+- Para saber mais sobre padrões de nuvem azure, consulte [padrões de design de nuvem.](/azure/architecture/patterns)

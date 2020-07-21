@@ -7,20 +7,20 @@ ms.date: 06/07/2020
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4fd52f76baad8059e130adfc01cdd0152b40a510
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: c56575ac8ea6cb35d60bb9419269db89b0295721
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911111"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477223"
 ---
-# <a name="hybrid-app-design-considerations"></a>Considerações híbridas de design de aplicativos
+# <a name="hybrid-app-design-considerations"></a>Considerações de design de aplicações híbridas
 
 O Microsoft Azure é a única nuvem híbrida consistente. Permite-lhe reutilizar os seus investimentos de desenvolvimento e permite aplicações que podem abranger o Azure global, as nuvens soberanas do Azure, e a Azure Stack, que é uma extensão do Azure no seu datacenter. As aplicações que abrangem nuvens também são referidas como *aplicações híbridas.*
 
-O [*Guia de Arquitetura de Aplicações Azure*](https://docs.microsoft.com/azure/architecture/guide) descreve uma abordagem estruturada para a conceção de apps que são escaláveis, resistentes e altamente disponíveis. As considerações descritas no Guia de Arquitetura de [*Aplicações Azure*](https://docs.microsoft.com/azure/architecture/guide) aplicam-se igualmente a aplicações concebidas para uma única nuvem e para apps que se estendem por nuvens.
+O [*Guia de Arquitetura de Aplicações Azure*](/azure/architecture/guide) descreve uma abordagem estruturada para a conceção de apps que são escaláveis, resistentes e altamente disponíveis. As considerações descritas no Guia de Arquitetura de [*Aplicações Azure*](/azure/architecture/guide) aplicam-se igualmente a aplicações concebidas para uma única nuvem e para apps que se estendem por nuvens.
 
-Este artigo aumenta os [*Pilares da qualidade do software discutidos*](https://docs.microsoft.com/azure/architecture/guide/pillars) no Guia de [ *Arquitetura*](https://docs.microsoft.com/azure/architecture/guide/) de [*Aplicações Azure,*](https://docs.microsoft.com/azure/architecture/guide/) focando-se especificamente na conceção de aplicações híbridas. Além disso, adicionamos um pilar *de colocação,* uma vez que as aplicações híbridas não são exclusivas de uma nuvem ou de um datacenter no local.
+Este artigo aumenta os [*Pilares da qualidade do software discutidos*](/azure/architecture/guide/pillars) no Guia de [ *Arquitetura*](/azure/architecture/guide/) de [*Aplicações Azure,*](/azure/architecture/guide/) focando-se especificamente na conceção de aplicações híbridas. Além disso, adicionamos um pilar *de colocação,* uma vez que as aplicações híbridas não são exclusivas de uma nuvem ou de um datacenter no local.
 
 Os cenários híbridos variam muito com os recursos disponíveis para o desenvolvimento, e abrangem considerações como geografia, segurança, acesso à Internet e outras considerações. Embora este guia não possa enumerar as suas considerações específicas, pode fornecer algumas diretrizes e boas práticas para seguir. Projetar, configurar, implementar e manter uma arquitetura híbrida de aplicações envolve muitas considerações de design que podem não ser inerentemente conhecidas por si.
 
@@ -93,7 +93,7 @@ A colocação é a tarefa importante de posicionar componentes para que possam m
 
 **Verifique os locais necessários.** Certifique-se de que a aplicação ou qualquer um dos seus componentes são necessários para operar ou exigir certificação para uma nuvem específica. Isto pode incluir requisitos de soberania da sua empresa ou ditados por lei. Além disso, determine se são necessárias quaisquer operações no local para um determinado local ou local.
 
-**Verificar dependências de conectividade.** Locais necessários e outros fatores podem ditar as dependências de conectividade entre os seus componentes. Ao colocar os componentes, determine a conectividade e segurança ideais para a comunicação entre eles. As escolhas incluem [ *VPN,*](https://docs.microsoft.com/azure/vpn-gateway/) [ *ExpressRoute*](https://docs.microsoft.com/azure/expressroute/) e [ *Conexões Híbridas.*](https://docs.microsoft.com/azure/app-service/app-service-hybrid-connections)
+**Verificar dependências de conectividade.** Locais necessários e outros fatores podem ditar as dependências de conectividade entre os seus componentes. Ao colocar os componentes, determine a conectividade e segurança ideais para a comunicação entre eles. As escolhas incluem [ *VPN,*](/azure/vpn-gateway/) [ *ExpressRoute*](/azure/expressroute/) e [ *Conexões Híbridas.*](/azure/app-service/app-service-hybrid-connections)
 
 **Avaliar as capacidades da plataforma.** Para cada componente da aplicação, consulte se o fornecedor de recursos necessário para o componente da aplicação está disponível na nuvem e se a largura de banda pode acomodar os requisitos de produção e latência esperados.
 
@@ -109,7 +109,7 @@ A colocação é a tarefa importante de posicionar componentes para que possam m
 
 A escalabilidade é a capacidade de um sistema lidar com o aumento da carga numa aplicação, que pode variar ao longo do tempo, uma vez que outros fatores e forças afetam o tamanho do público, além do tamanho e âmbito da app.
 
-Para a discussão central deste pilar, [*veja-se a Escalabilidade*](https://docs.microsoft.com/azure/architecture/guide/pillars#scalability) nos cinco pilares da excelência da arquitetura.
+Para a discussão central deste pilar, [*veja-se a Escalabilidade*](/azure/architecture/guide/pillars#scalability) nos cinco pilares da excelência da arquitetura.
 
 Uma abordagem de escala horizontal para apps híbridas permite adicionar mais instâncias para satisfazer a procura e, em seguida, desativá-las durante períodos mais silenciosos.
 
@@ -155,7 +155,7 @@ Para a discussão central deste pilar, veja [*Disponibilidade*](/azure/architect
 
 Resiliência é a capacidade de uma aplicação e sistema híbridos recuperarem de falhas e continuarem a funcionar. O objetivo da resiliência é devolver a app a um estado em pleno funcionamento depois de ocorrer uma falha. As estratégias de resiliência incluem soluções como backup, replicação e recuperação de desastres.
 
-Para a discussão central deste pilar, [*veja-se a Resiliência*](https://docs.microsoft.com/azure/architecture/guide/pillars#resiliency) nos cinco pilares da excelência da arquitetura.
+Para a discussão central deste pilar, [*veja-se a Resiliência*](/azure/architecture/guide/pillars#resiliency) nos cinco pilares da excelência da arquitetura.
 
 ### <a name="resiliency-checklist"></a>Lista de verificação da resiliência
 
@@ -201,7 +201,7 @@ Determine as partes da aplicação que requerem monitorização.
 
 A segurança é uma das principais considerações para qualquer app em nuvem e torna-se ainda mais crítica para aplicações híbridas em nuvem.
 
-Para a discussão central deste pilar, veja [*a Segurança*](https://docs.microsoft.com/azure/architecture/guide/pillars#security) nos cinco pilares da excelência da arquitetura.
+Para a discussão central deste pilar, veja [*a Segurança*](/azure/architecture/guide/pillars#security) nos cinco pilares da excelência da arquitetura.
 
 ### <a name="security-checklist"></a>Lista de verificação de segurança
 
@@ -227,8 +227,8 @@ Pode parecer uma tarefa demorada de antemão, mas facilmente obtém o seu retorn
 
 ## <a name="next-steps"></a>Passos seguintes
 
-Para obter mais informações, consulte os seguintes recursos:
+Para obter mais informações, veja os seguintes recursos:
 
-- [Nuvem híbrida](https://azure.microsoft.com/overview/hybrid-cloud/)
+- [Cloud híbrida](https://azure.microsoft.com/overview/hybrid-cloud/)
 - [Aplicativos de nuvem híbrida](https://azure.microsoft.com/solutions/hybrid-cloud-app/)
 - [Desenvolver modelo do Azure Resource Manager para consistência da cloud](https://aka.ms/consistency)

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 75289eae902c5363862e345bdedb97cbcee0476e
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910887"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477325"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Implementar aplicativo híbrido com dados no local que escalam a nuvem cruzada
 
@@ -131,7 +131,7 @@ O Azure App Service simplifica a execução e gestão de uma aplicação web. Co
 
 ### <a name="create-web-apps"></a>Criar aplicativos web
 
-1. Crie uma aplicação web em Azure seguindo as instruções em [Gerir um plano de Serviço de Aplicações em Azure.](https://docs.microsoft.com/azure/app-service/app-service-plan-manage#create-an-app-service-plan) Certifique-se de colocar a aplicação web no mesmo grupo de subscrição e recursos que a sua rede híbrida.
+1. Crie uma aplicação web em Azure seguindo as instruções em [Gerir um plano de Serviço de Aplicações em Azure.](/azure/app-service/app-service-plan-manage#create-an-app-service-plan) Certifique-se de colocar a aplicação web no mesmo grupo de subscrição e recursos que a sua rede híbrida.
 
 2. Repita o passo anterior (1) no Azure Stack Hub.
 
@@ -172,7 +172,7 @@ O gateway de rede virtual no lado Azure da rede híbrida deve permitir que as li
 
 ### <a name="integrate-the-azure-app-service-app-with-the-hybrid-network"></a>Integrar a app Azure App Service com a rede híbrida
 
-1. Para ligar a aplicação ao Azure VNet, siga as instruções em Gateway necessárias para [a integração do VNet](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
+1. Para ligar a aplicação ao Azure VNet, siga as instruções em Gateway necessárias para [a integração do VNet](/azure/app-service/web-sites-integrate-with-vnet#gateway-required-vnet-integration).
 
 2. Vá a **Definições** para o plano de Serviço de Aplicações que hospeda a aplicação web. Em **Definições**, selecione **Networking**.
 
@@ -186,7 +186,7 @@ O gateway de rede virtual no lado Azure da rede híbrida deve permitir que as li
 
     ![Intervalos de endereços IP para rota na Integração de Rede Virtual](media/solution-deployment-guide-hybrid/image13.png)
 
-Para saber mais sobre como o Serviço de Aplicações se integra com os VNets Azure, consulte [Integrar a sua aplicação com uma Rede Virtual Azure.](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet)
+Para saber mais sobre como o Serviço de Aplicações se integra com os VNets Azure, consulte [Integrar a sua aplicação com uma Rede Virtual Azure.](/azure/app-service/web-sites-integrate-with-vnet)
 
 ### <a name="configure-the-azure-stack-hub-virtual-network"></a>Configure a rede virtual Azure Stack Hub
 
@@ -210,7 +210,7 @@ Este tutorial utiliza o Azure DNS para gerir o DNS porque os domínios do Servi�
 
 ### <a name="create-subdomains"></a>Criar subdomínios
 
-Como o Traffic Manager depende de DNS CNAMEs, é necessário um subdomínio para encaminhar adequadamente o tráfego para os pontos finais. Para obter mais informações sobre registos DNS e mapeamento de domínio, consulte [os domínios do mapa com o Traffic Manager](https://docs.microsoft.com/azure/app-service/web-sites-traffic-manager-custom-domain-name).
+Como o Traffic Manager depende de DNS CNAMEs, é necessário um subdomínio para encaminhar adequadamente o tráfego para os pontos finais. Para obter mais informações sobre registos DNS e mapeamento de domínio, consulte [os domínios do mapa com o Traffic Manager](/azure/app-service/web-sites-traffic-manager-custom-domain-name).
 
 Para o ponto final do Azure, irá criar um subdomínio que os utilizadores podem usar para aceder à sua aplicação web. Para este tutorial, pode utilizar **app.northwind.com,** mas deve personalizar este valor com base no seu próprio domínio.
 
@@ -218,13 +218,13 @@ Também terás de criar um subdomínio com um disco A para o ponto final do Azur
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Configure um domínio personalizado em Azure
 
-1. Adicione o **nome de anfitrião app.northwind.com** à aplicação web Azure [mapeando um CNAME ao Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
+1. Adicione o **nome de anfitrião app.northwind.com** à aplicação web Azure [mapeando um CNAME ao Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record).
 
 ### <a name="configure-custom-domains-in-azure-stack-hub"></a>Configure domínios personalizados no Azure Stack Hub
 
-1. Adicione o **nome de anfitrião azurestack.northwind.com** à aplicação web Azure Stack Hub [mapeando um disco A ao Azure App Service](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Utilize o endereço IP de encaminhamento de internet para a aplicação Do Serviço de Aplicações.
+1. Adicione o **nome de anfitrião azurestack.northwind.com** à aplicação web Azure Stack Hub [mapeando um disco A ao Azure App Service](/azure/app-service/app-service-web-tutorial-custom-domain#map-an-a-record). Utilize o endereço IP de encaminhamento de internet para a aplicação Do Serviço de Aplicações.
 
-2. Adicione o **nome de anfitrião app.northwind.com** à aplicação web Azure Stack Hub [mapeando um CNAME para O Serviço de Aplicações Azure](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Utilize o nome de anfitrião configurado no passo anterior (1) como alvo para o CNAME.
+2. Adicione o **nome de anfitrião app.northwind.com** à aplicação web Azure Stack Hub [mapeando um CNAME para O Serviço de Aplicações Azure](/azure/app-service/app-service-web-tutorial-custom-domain#map-a-cname-record). Utilize o nome de anfitrião configurado no passo anterior (1) como alvo para o CNAME.
 
 ## <a name="configure-ssl-certificates-for-cross-cloud-scaling"></a>Configure certificados SSL para escalamento de nuvens cruzadas
 
@@ -238,23 +238,23 @@ Para adicionar SSL a Azure:
 
 1. Certifique-se de que o certificado SSL que obtém é válido para o subdomínio que criou. (Não faz mal usar certificados wildcard.)
 
-2. Em Azure, siga as instruções na **aplicação Web** Prepare e prenda as secções de **certificado SSL** do [Bind um certificado SSL personalizado existente ao artigo da Azure Web Apps.](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) Selecione **SSL baseado em SNI** como o **Tipo SSL**.
+2. Em Azure, siga as instruções na **aplicação Web** Prepare e prenda as secções de **certificado SSL** do [Bind um certificado SSL personalizado existente ao artigo da Azure Web Apps.](/azure/app-service/app-service-web-tutorial-custom-ssl) Selecione **SSL baseado em SNI** como o **Tipo SSL**.
 
-3. Redirecione todo o tráfego para a porta HTTPS. Siga as instruções na secção **HttpS da Secção HTTPS** do [Vinco um certificado SSL personalizado existente para](https://docs.microsoft.com/Azure/app-service/app-service-web-tutorial-custom-ssl) o artigo da Azure Web Apps.
+3. Redirecione todo o tráfego para a porta HTTPS. Siga as instruções na secção **HttpS da Secção HTTPS** do [Vinco um certificado SSL personalizado existente para](/azure/app-service/app-service-web-tutorial-custom-ssl) o artigo da Azure Web Apps.
 
 Para adicionar SSL ao Azure Stack Hub:
 
 1. Repita os passos 1-3 que usou para o Azure.
 
-## <a name="configure-and-deploy-the-web-app"></a>Configure e implemente a aplicação web
+## <a name="configure-and-deploy-the-web-app"></a>Configurar e implementar a aplicação Web
 
-Irá configurar o código da aplicação para reportar telemetria à instância correta do Application Insights e configurar as aplicações web com as cadeias de conexão certas. Para saber mais sobre a Aplicação Insights, veja [o que é Insights de Aplicação?](https://docs.microsoft.com/azure/application-insights/app-insights-overview)
+Irá configurar o código da aplicação para reportar telemetria à instância correta do Application Insights e configurar as aplicações web com as cadeias de conexão certas. Para saber mais sobre a Aplicação Insights, veja [o que é Insights de Aplicação?](/azure/application-insights/app-insights-overview)
 
 ### <a name="add-application-insights"></a>Adicionar Insights de Aplicação
 
 1. Abra a sua aplicação web no Microsoft Visual Studio.
 
-2. [Adicione Insights de Aplicação](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) ao seu projeto para transmitir a telemetria que o Application Insights utiliza para criar alertas quando o tráfego web aumenta ou diminui.
+2. [Adicione Insights de Aplicação](/azure/azure-monitor/app/asp-net-core#enable-client-side-telemetry-for-web-applications) ao seu projeto para transmitir a telemetria que o Application Insights utiliza para criar alertas quando o tráfego web aumenta ou diminui.
 
 ### <a name="configure-dynamic-connection-strings"></a>Configurar cordas de ligação dinâmica
 
@@ -287,7 +287,7 @@ Pode utilizar variáveis ambientais do Serviço de Aplicações para passar uma 
 
 1. Crie cordas de conexão para Azure e Azure Stack Hub. As cordas devem ser as mesmas, exceto os endereços IP que são utilizados.
 
-2. No Azure e no Azure Stack Hub, adicione a cadeia de conexão apropriada [como uma definição](https://docs.microsoft.com/azure/app-service/web-sites-configure) de aplicação na aplicação web, usando `SQLCONNSTR\_` como um prefixo no nome.
+2. No Azure e no Azure Stack Hub, adicione a cadeia de conexão apropriada [como uma definição](/azure/app-service/web-sites-configure) de aplicação na aplicação web, usando `SQLCONNSTR\_` como um prefixo no nome.
 
 3. **Guarde** as definições da aplicação web e reinicie a aplicação.
 
@@ -543,4 +543,4 @@ Utilize os seguintes passos como guia para configurar a comutação automática 
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- Para saber mais sobre padrões de nuvem azure, consulte [padrões de design de nuvem.](https://docs.microsoft.com/azure/architecture/patterns)
+- Para saber mais sobre padrões de nuvem azure, consulte [padrões de design de nuvem.](/azure/architecture/patterns)

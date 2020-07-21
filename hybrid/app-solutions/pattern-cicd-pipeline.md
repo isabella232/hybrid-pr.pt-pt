@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 306cc9604a8e919724f9f76b7e5122d534d2d1ae
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: e26056a9507a7467473b009725d4f210d9d59ec8
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911122"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477240"
 ---
 # <a name="devops-pattern"></a>Padrão de devOps
 
@@ -47,7 +47,7 @@ O Padrão de DevOps destina-se a garantir a consistência entre as implementaç�
 - Os parâmetros de implantação funcionarão em todos os ambientes-alvo?
 - As propriedades específicas dos recursos estão disponíveis em todas as nuvens-alvo?
 
-Para obter mais informações, consulte [os modelos do Gestor de Recursos Azure para obter consistência na nuvem.](https://docs.microsoft.com/azure/azure-resource-manager/templates-cloud-consistency)
+Para obter mais informações, consulte [os modelos do Gestor de Recursos Azure para obter consistência na nuvem.](/azure/azure-resource-manager/templates-cloud-consistency)
 
 Além disso, considere os seguintes pontos ao decidir como implementar este padrão:
 

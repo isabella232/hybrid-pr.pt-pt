@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 0e1a0fc4fb4110fdb406d4b4b2e72abb8f5412c9
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
+ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910870"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86477291"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Configurar conectividade híbrida em nuvem usando Azure e Azure Stack Hub
 
@@ -37,7 +37,7 @@ Alguns componentes são necessários para construir uma implantação híbrida d
 ### <a name="azure"></a>Azure
 
 - Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-- Crie uma [aplicação web](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?view=vsts&tabs=vsts) em Azure. Tome nota do URL da aplicação web porque vai precisar dele na solução.
+- Crie uma [aplicação web](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) em Azure. Tome nota do URL da aplicação web porque vai precisar dele na solução.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -60,7 +60,7 @@ Este exemplo de solução pressupõe que você tem algum conhecimento básico de
 - [Introdução ao Azure](https://azure.microsoft.com/overview/what-is-azure/)
 - [Conceitos de chave de hub de pilha de Azure](/azure-stack/operator/azure-stack-overview.md)
 
-### <a name="before-you-begin"></a>Antes de começar
+### <a name="before-you-begin"></a>Before you begin
 
 Verifique se cumpre os seguintes critérios antes de começar a configurar a conectividade híbrida em nuvem:
 
@@ -69,7 +69,7 @@ Verifique se cumpre os seguintes critérios antes de começar a configurar a con
 
 #### <a name="solution-example-values"></a>Valores de exemplo de solução
 
-Os exemplos desta solução utilizam os seguintes valores. Pode utilizar estes valores para criar um ambiente de teste ou encaminhá-los para uma melhor compreensão dos exemplos. Para obter mais informações sobre as definições de gateway VPN, consulte [sobre as definições do gateway VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
+Os exemplos desta solução utilizam os seguintes valores. Pode utilizar estes valores para criar um ambiente de teste ou encaminhá-los para uma melhor compreensão dos exemplos. Para obter mais informações sobre as definições de gateway VPN, consulte [sobre as definições do gateway VPN](/azure/vpn-gateway/vpn-gateway-about-vpn-gateway-settings).
 
 Especificações de ligação:
 
@@ -99,7 +99,7 @@ Endereços IP de rede e sub-rede:
 
 ## <a name="create-a-virtual-network-in-global-azure-and-azure-stack-hub"></a>Criar uma rede virtual no Global Azure e Azure Stack Hub
 
-Utilize os seguintes passos para criar uma rede virtual utilizando o portal. Pode utilizar estes [valores de exemplo](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) se estiver a usar este artigo como única solução. Se estiver a usar este artigo para configurar um ambiente de produção, substitua as definições de exemplo pelos seus próprios valores.
+Utilize os seguintes passos para criar uma rede virtual utilizando o portal. Pode utilizar estes [valores de exemplo](/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal#values) se estiver a usar este artigo como única solução. Se estiver a usar este artigo para configurar um ambiente de produção, substitua as definições de exemplo pelos seus próprios valores.
 
 > [!IMPORTANT]
 > Deve certificar-se de que não existe uma sobreposição de endereços IP nos espaços de endereçoS Azure Stack Hub vNet.
@@ -212,4 +212,4 @@ Pode ver a ligação na página **Connections** do gateway de rede virtual. O es
 
 ## <a name="next-steps"></a>Passos seguintes
 
-- Para saber mais sobre padrões de nuvem azure, consulte [padrões de design de nuvem.](https://docs.microsoft.com/azure/architecture/patterns)
+- Para saber mais sobre padrões de nuvem azure, consulte [padrões de design de nuvem.](/azure/architecture/patterns)
