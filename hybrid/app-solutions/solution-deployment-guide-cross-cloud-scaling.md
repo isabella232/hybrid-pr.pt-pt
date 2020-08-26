@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 10cb042e2c6d0c6cb567e14072cd80bc663d686c
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
+ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477342"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88886820"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implemente uma aplicação que escala a nuvem cruzada usando O Azure e Azure Stack Hub
 
@@ -40,7 +40,7 @@ Nesta solução, você construirá um ambiente de amostra para:
 - Subscrição do Azure. Se necessário, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 - Um sistema integrado Azure Stack Hub ou implementação do Azure Stack Development Kit (ASDK).
   - Para obter instruções sobre a instalação do Azure Stack Hub, consulte [instalar o ASDK](/azure-stack/asdk/asdk-install.md).
-  - Para um script de automatização pós-implantação ASDK, vá a:[https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
+  - Para um script de automatização pós-implantação ASDK, vá a: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Esta instalação pode requerer algumas horas para ser concluída.
 - Implementar serviços paaS do Serviço de [Aplicações](/azure-stack/operator/azure-stack-app-service-deploy.md) para o Azure Stack Hub.
 - [Crie planos/ofertas](/azure-stack/operator/service-plan-offer-subscription-overview.md) dentro do ambiente Azure Stack Hub.
@@ -68,7 +68,7 @@ A solução cross-cloud garante uma gestão perfeita e uma interface familiar en
 
 ### <a name="get-a-custom-domain-and-configure-dns"></a>Obtenha um domínio personalizado e configuure DNS
 
-Atualize o ficheiro da zona DNS para o domínio. A Azure AD verificará a propriedade do nome de domínio personalizado. Utilize [o Azure DNS](/azure/dns/dns-getstarted-portal) para registos DNS Azure/Office 365/external DNS dentro do Azure, ou adicione a entrada de DNS [num registo DNS diferente](https://support.office.com/article/Create-DNS-records-for-Office-365-when-you-manage-your-DNS-records-b0f3fdca-8a80-4e8e-9ef3-61e8a2a9ab23/).
+Atualize o ficheiro da zona DNS para o domínio. A Azure AD verificará a propriedade do nome de domínio personalizado. Utilize [o Azure DNS](/azure/dns/dns-getstarted-portal) para registos DNS Azure/Microsoft 365/externos em Azure, ou adicione a entrada de DNS num registo [DNS diferente](/microsoft-365/admin/get-help-with-domains/create-dns-records-at-any-dns-hosting-provider).
 
 1. Registe um domínio personalizado com um registo público.
 2. Inicie sessão na entidade de registo de nome de domínio para o domínio. Um administrador aprovado pode ser necessário para fazer atualizações dns.
