@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 6de35cb55c4c35a2a9927f9ffc2516ccb00cd89f
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
+ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477325"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "92353483"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Implementar aplicativo híbrido com dados no local que escalam a nuvem cruzada
 
@@ -37,7 +37,7 @@ Este tutorial abrange as seguintes tarefas:
 > - Configure a troca automática de tráfego entre o Azure global e o Azure Stack Hub.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagrama de pilares híbridos](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub é uma extensão do Azure. O Azure Stack Hub traz a agilidade e inovação da computação em nuvem para o seu ambiente no local, permitindo a única nuvem híbrida que lhe permite construir e implementar aplicações híbridas em qualquer lugar.  
 > 
 > O artigo [Projeto de aplicação híbrido considera](overview-app-design-considerations.md) os pilares da qualidade do software (colocação, escalabilidade, disponibilidade, resiliência, gestão e segurança) para conceber, implementar e operar aplicações híbridas. As considerações de design ajudam na otimização do design de aplicações híbridas, minimizando os desafios em ambientes de produção.
@@ -153,7 +153,7 @@ Para fornecer conectividade entre a extremidade frontal da web em Azure e a base
 
 O gateway de rede virtual no lado Azure da rede híbrida deve permitir que as ligações ponto-a-local se integrem com o Azure App Service.
 
-1. Em Azure, vá à página virtual do gateway da rede. Em **Definições**, selecione **configuração ponto-a-local**.
+1. No portal Azure, aceda à página de gateway de rede virtual. Em **Definições**, selecione **configuração ponto-a-local**.
 
     ![Opção ponto-a-local no gateway de rede virtual Azure](media/solution-deployment-guide-hybrid/image8.png)
 
@@ -192,7 +192,7 @@ Para saber mais sobre como o Serviço de Aplicações se integra com os VNets Az
 
 O portal de rede local na rede virtual Azure Stack Hub precisa de ser configurado para encaminhar o tráfego a partir da gama de endereços ponto-a-local do Serviço de Aplicações.
 
-1. No Azure Stack Hub, vá ao **gateway de rede local.** Em **Definições**, selecione **Configuração**.
+1. No portal Azure Stack Hub, aceda ao **gateway de rede local.** Em **Definições**, selecione **Configuração**.
 
     ![Opção de configuração gateway em Azure Stack Hub gateway de rede local](media/solution-deployment-guide-hybrid/image14.png)
 
@@ -214,7 +214,7 @@ Como o Traffic Manager depende de DNS CNAMEs, é necessário um subdomínio para
 
 Para o ponto final do Azure, irá criar um subdomínio que os utilizadores podem usar para aceder à sua aplicação web. Para este tutorial, pode utilizar **app.northwind.com,** mas deve personalizar este valor com base no seu próprio domínio.
 
-Também terás de criar um subdomínio com um disco A para o ponto final do Azure Stack Hub. Pode **usáazurestack.northwind.com.**
+Também terás de criar um subdomínio com um disco A para o ponto final do Azure Stack Hub. Pode **usá azurestack.northwind.com.**
 
 ### <a name="configure-a-custom-domain-in-azure"></a>Configure um domínio personalizado em Azure
 
@@ -238,13 +238,13 @@ Para adicionar SSL a Azure:
 
 1. Certifique-se de que o certificado SSL que obtém é válido para o subdomínio que criou. (Não faz mal usar certificados wildcard.)
 
-2. Em Azure, siga as instruções na **aplicação Web** Prepare e prenda as secções de **certificado SSL** do [Bind um certificado SSL personalizado existente ao artigo da Azure Web Apps.](/azure/app-service/app-service-web-tutorial-custom-ssl) Selecione **SSL baseado em SNI** como o **Tipo SSL**.
+2. No portal Azure, siga as instruções na **aplicação Web** e ligue as secções de **certificado SSL** do [Bind um certificado SSL personalizado existente ao artigo da Azure Web Apps.](/azure/app-service/app-service-web-tutorial-custom-ssl) Selecione **SSL baseado em SNI** como o **Tipo SSL**.
 
-3. Redirecione todo o tráfego para a porta HTTPS. Siga as instruções na secção **HttpS da Secção HTTPS** do [Vinco um certificado SSL personalizado existente para](/azure/app-service/app-service-web-tutorial-custom-ssl) o artigo da Azure Web Apps.
+3. Redirecione todo o tráfego para a porta HTTPS. Siga as instruções na secção   **HttpS da Secção HTTPS** do [Vinco um certificado SSL personalizado existente para](/azure/app-service/app-service-web-tutorial-custom-ssl) o artigo da Azure Web Apps.
 
 Para adicionar SSL ao Azure Stack Hub:
 
-1. Repita os passos 1-3 que usou para o Azure.
+1. Repita os passos 1-3 que usou para o Azure, utilizando o portal Azure Stack Hub.
 
 ## <a name="configure-and-deploy-the-web-app"></a>Configurar e implementar a aplicação Web
 
@@ -300,7 +300,7 @@ Quando cria a sua aplicação web num ambiente de Serviço de Aplicações, come
 
 ### <a name="enable-automatic-scale-out"></a>Permitir a escala automática
 
-1. Em Azure, encontre o plano de Serviço de Aplicações para os sites que pretende escalar e, em seguida, selecione **Scale-out (Plano de Serviço de Aplicações)**.
+1. No portal Azure, encontre o plano de Serviço de Aplicações para os sites que pretende escalar e, em seguida, selecione **Scale-out (Plano de Serviço de Aplicações)**.
 
     ![Dimensione o Serviço de Aplicações Azure](media/solution-deployment-guide-hybrid/image16.png)
 
@@ -372,7 +372,7 @@ Quando o tráfego diminui, a aplicação web Azure pode reduzir automaticamente 
 
 ## <a name="create-a-traffic-manager-profile-and-configure-cross-cloud-scaling"></a>Crie um perfil de Gestor de Tráfego e configuure a escala de nuvens cruzadas
 
-Crie um perfil de Gestor de Tráfego em Azure e, em seguida, configuure pontos finais para permitir a escala de nuvens cruzadas.
+Crie um perfil de Gestor de Tráfego utilizando o portal Azure e, em seguida, configuure pontos finais para permitir a escala de nuvens cruzadas.
 
 ### <a name="create-traffic-manager-profile"></a>Criar perfil de Gestor de Tráfego
 
@@ -430,15 +430,15 @@ Depois de configurados ambos os pontos finais, estão listados no **perfil de Ge
 
 ![Pontos finais no perfil do Gestor de Tráfego](media/solution-deployment-guide-hybrid/image20.png)
 
-## <a name="set-up-application-insights-monitoring-and-alerting"></a>Configurar a monitorização e alerta de Insights de Aplicações
+## <a name="set-up-application-insights-monitoring-and-alerting-in-azure"></a>Configurar a monitorização e alerta de Insights de Aplicação em Azure
 
 O Azure Application Insights permite-lhe monitorizar a sua aplicação e enviar alertas com base nas condições que configura. Alguns exemplos são: a aplicação está indisponível, está a sofrer falhas ou está a apresentar problemas de desempenho.
 
-Utilizará métricas de Application Insights para criar alertas. Quando estes alertas disparam, a instância da sua aplicação web mudará automaticamente de Azure Stack Hub para Azure para escalar e, em seguida, de volta para Azure Stack Hub para escalar dentro
+Utilizará as métricas Azure Application Insights para criar alertas. Quando estes alertas disparam, a instância da sua aplicação web mudará automaticamente de Azure Stack Hub para Azure para escalar e, em seguida, de volta para Azure Stack Hub para escalar dentro
 
 ### <a name="create-an-alert-from-metrics"></a>Criar um alerta a partir de métricas
 
-Vá ao grupo de recursos para este tutorial e, em seguida, selecione a instância Application Insights para abrir **Insights de Aplicação**.
+No portal Azure, vá ao grupo de recursos para este tutorial e selecione a instância Application Insights para abrir **Insights de Aplicação**.
 
 ![Application Insights](media/solution-deployment-guide-hybrid/image21.png)
 
