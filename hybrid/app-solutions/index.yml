@@ -1,32 +1,32 @@
 ### YamlMime:Landing
-title: Documentação de padrões e soluções híbridos do Azure
-summary: Saiba como tirar partido dos exemplos de padrões e soluções híbridos no desenvolvimento da sua aplicação. O Azure e o Azure Stack permitem desenvolver aplicações híbridas, criadas num conjunto de serviços cloud inteligentes e de edge inteligente.
+title: Documentação de padrões e soluções híbridos e para várias clouds do Azure
+summary: Saiba como tirar partido dos exemplos de padrões e soluções híbridos e para várias clouds no desenvolvimento de aplicações, criados num conjunto de serviços cloud inteligentes e de edge inteligente.
 metadata:
-  title: Documentação de padrões e soluções híbridos do Azure
-  description: Saiba como tirar partido dos exemplos de padrões e soluções híbridos no desenvolvimento da sua aplicação. O Azure e o Azure Stack permitem desenvolver aplicações híbridas, criadas num conjunto de serviços cloud inteligentes e de edge inteligente.
+  title: Documentação de padrões e soluções híbridos e para várias clouds do Azure
+  description: Saiba como tirar partido dos exemplos de padrões e soluções híbridos e para várias clouds no desenvolvimento de aplicações, criados num conjunto de serviços cloud inteligentes e de edge inteligente.
   ms.service: azure-stack
   ms.topic: landing-page
   author: BryanLa
   ms.author: bryanla
   ms.date: 10/31/2019
-  ms.openlocfilehash: 923e8aa2af78b5d23ba1f25d8b0eb5b80edc4f0a
-  ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+  ms.openlocfilehash: f51256c555011744f847e457b8bac46a1b5c4b14
+  ms.sourcegitcommit: 40117c1f26640d276fcdb9c760bb4e508c0c6003
   ms.translationtype: HT
   ms.contentlocale: pt-PT
-  ms.lasthandoff: 06/17/2020
-  ms.locfileid: "84909767"
+  ms.lasthandoff: 11/18/2020
+  ms.locfileid: "94872988"
 landingContent:
-- title: Sobre os padrões e soluções híbridos
+- title: Sobre os padrões e soluções híbridos e para várias clouds
   linkLists:
   - linkListType: overview
     links:
-    - text: O que são os exemplos de padrões e soluções híbridos?
+    - text: O que são exemplos de padrões e soluções?
       url: overview-patterns-solution-examples.md
   - linkListType: concept
     links:
-    - text: Considerações de design de aplicações híbridas
+    - text: Considerações sobre design de aplicações
       url: overview-app-design-considerations.md
-- title: Explorar padrões híbridos
+- title: Explorar padrões híbridos e para várias clouds
   linkLists:
   - linkListType: architecture
     links:
@@ -38,7 +38,7 @@ landingContent:
       url: pattern-retail-footfall-detection.md
     - text: Aplicação distribuída geograficamente
       url: pattern-geo-distributed.md
-- title: Implementar exemplos de soluções híbridas
+- title: Implementar exemplos de soluções híbridas e para várias clouds
   linkLists:
   - linkListType: tutorial
     links:

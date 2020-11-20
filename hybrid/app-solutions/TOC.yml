@@ -1,8 +1,8 @@
-- name: Documentação da Tecnologia Híbrida do Azure
+- name: Documentação de soluções híbridas e para várias clouds
   href: index.yml
 - name: Descrição geral
   items:
-    - name: Exemplos de padrões e soluções híbridos
+    - name: Exemplos de padrões e soluções
       href: overview-patterns-solution-examples.md
 - name: Padrões
   items:
@@ -58,7 +58,7 @@
       href: 'https://aka.ms/edgetrainingdeploy'
 - name: Conceitos
   items:
-    - name: Considerações de design de aplicações híbridas
+    - name: Considerações sobre design de aplicações
       href: overview-app-design-considerations.md
 - name: Relacionado
   items:
