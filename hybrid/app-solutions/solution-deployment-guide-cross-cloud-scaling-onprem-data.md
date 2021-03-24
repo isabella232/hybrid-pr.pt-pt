@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ecc42a94e2c59531b2a2e933772b0d8ce8c58609
-ms.sourcegitcommit: 0d5b5336bdb969588d0b92e04393e74b8f682c3b
+ms.openlocfilehash: 0989859fd68847932d3e69defee59740a2bffd44
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92353483"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895402"
 ---
 # <a name="deploy-hybrid-app-with-on-premises-data-that-scales-cross-cloud"></a>Implementar aplicativo híbrido com dados no local que escalam a nuvem cruzada
 
@@ -47,7 +47,7 @@ Este tutorial abrange as seguintes tarefas:
 Este tutorial pressupõe que você tem um conhecimento básico de Azure global e Azure Stack Hub. Se quiser saber mais antes de iniciar o tutorial, reveja estes artigos:
 
 - [Introdução ao Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Conceitos de chave de hub de pilha de Azure](/azure-stack/operator/azure-stack-overview.md)
+- [Conceitos de chave de hub de pilha de Azure](/azure-stack/operator/azure-stack-overview)
 
 Este tutorial também assume que tem uma subscrição do Azure. Se não tiver uma subscrição, [crie uma conta gratuita](https://azure.microsoft.com/free/) antes de começar.
 
@@ -55,7 +55,7 @@ Este tutorial também assume que tem uma subscrição do Azure. Se não tiver um
 
 Antes de iniciar esta solução, certifique-se de que cumpre os seguintes requisitos:
 
-- Um Kit de Desenvolvimento de Pilhas Azure (ASDK) ou uma subscrição de um Sistema Integrado Azure Stack Hub. Para implementar o ASDK, siga as instruções em [Implementar o ASDK utilizando o instalador](/azure-stack/asdk/asdk-install.md).
+- Um Kit de Desenvolvimento de Pilhas Azure (ASDK) ou uma subscrição de um Sistema Integrado Azure Stack Hub. Para implementar o ASDK, siga as instruções em [Implementar o ASDK utilizando o instalador](/azure-stack/asdk/asdk-install).
 - A sua instalação Azure Stack Hub deve ter o seguinte instalado:
   - O Serviço de Aplicações Azure. Trabalhe com o seu Operador Azure Stack Hub para implementar e configurar o Serviço de Aplicações Azure no seu ambiente. Este tutorial requer que o Serviço de Aplicações tenha pelo menos um (1) papel dedicado ao trabalhador disponível.
   - Uma imagem do Windows Server 2016.
@@ -82,7 +82,7 @@ Antes de iniciar esta solução, certifique-se de que cumpre os seguintes requis
 
 4. Na **Licença de servidor SQL grátis: SQL Server 2017 Developer on Windows Server**, selecione **Create**.
 
-5. Em **Basics > configurações básicas**de configuração , forneça um **Nome** para a máquina virtual (VM), um nome **de utilizador** para o SQL Server SA e uma **Palavra-passe** para a SA.  A partir da lista de drop-down de **subscrição,** selecione a subscrição para a qual está a implementar. Para **o grupo de recursos,** utilize escolha o VM **existente** e coloque o VM no mesmo grupo de recursos que a sua aplicação web Azure Stack Hub.
+5. Em **Basics > configurações básicas** de configuração , forneça um **Nome** para a máquina virtual (VM), um nome **de utilizador** para o SQL Server SA e uma **Palavra-passe** para a SA.  A partir da lista de drop-down de **subscrição,** selecione a subscrição para a qual está a implementar. Para **o grupo de recursos,** utilize escolha o VM **existente** e coloque o VM no mesmo grupo de recursos que a sua aplicação web Azure Stack Hub.
 
     ![Configurar definições básicas para VM no portal de utilizador Azure Stack Hub](media/solution-deployment-guide-hybrid/image3.png)
 
@@ -99,7 +99,7 @@ Antes de iniciar esta solução, certifique-se de que cumpre os seguintes requis
    - **Endereço IP público**: Utilize as definições predefinidos.
    - **Grupo de segurança de rede**: (NSG). Criar um novo NSG.
    - **Extensões e Monitorização**: Mantenha as definições predefinidos.
-   - **Conta de armazenamento de**diagnóstico: Crie uma nova conta se precisar de uma.
+   - **Conta de armazenamento de** diagnóstico: Crie uma nova conta se precisar de uma.
    - Selecione **OK** para guardar a sua configuração.
 
      ![Configurar funcionalidades opcionais de VM no portal de utilizadores do Azure Stack Hub](media/solution-deployment-guide-hybrid/image4.png)
@@ -139,7 +139,7 @@ O Azure App Service simplifica a execução e gestão de uma aplicação web. Co
 
 O Serviço de Aplicações no Azure Stack Hub deve ser redirecionável a partir da internet pública para permitir que os utilizadores acedam à sua aplicação. Se o seu Azure Stack Hub estiver acessível a partir da internet, tome nota do endereço IP ou URL virado para o público para a aplicação web Azure Stack Hub.
 
-Se estiver a usar um ASDK, pode [configurar um mapeamento ESTÁTICO NAT](/azure-stack/operator/azure-stack-create-vpn-connection-one-node.md#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) para expor o Serviço de Aplicações fora do ambiente virtual.
+Se estiver a usar um ASDK, pode [configurar um mapeamento ESTÁTICO NAT](/azure-stack/operator/azure-stack-create-vpn-connection-one-node#configure-the-nat-vm-on-each-asdk-for-gateway-traversal) para expor o Serviço de Aplicações fora do ambiente virtual.
 
 ### <a name="connect-a-web-app-in-azure-to-a-hybrid-network"></a>Conecte uma aplicação web em Azure a uma rede híbrida
 
@@ -267,7 +267,7 @@ Pode utilizar variáveis ambientais do Serviço de Aplicações para passar uma 
 
 1. Abra a aplicação no Visual Studio.
 
-2. Abra Startup.cs e encontre o seguinte bloco de código:
+2. Abrir .cs Startup e encontrar o seguinte bloco de código:
 
     ```C#
     services.AddDbContext<MyDatabaseContext>(options =>
@@ -504,12 +504,12 @@ Quando o seu site atingir os limiares que configura, receberá um alerta. Utiliz
 
 2. Selecione **Pontos de final**.
 3. Selecione o **ponto final Azure**.
-4. Em **Status**, selecione **Ativado**e, em seguida, selecione **Guardar**.
+4. Em **Status**, selecione **Ativado** e, em seguida, selecione **Guardar**.
 
     ![Ativar o ponto final do Azure no portal Azure](media/solution-deployment-guide-hybrid/image23.png)
 
 5. Em **Pontos de fim** para o perfil de Gestor de Tráfego, selecione Ponto final **Externo**.
-6. Em **Estado de Estado**, selecione **Desativado**e, em seguida, selecione **Guardar**.
+6. Em **Estado de Estado**, selecione **Desativado** e, em seguida, selecione **Guardar**.
 
     ![Desativar o ponto final do Azure Stack Hub no portal Azure](media/solution-deployment-guide-hybrid/image24.png)
 

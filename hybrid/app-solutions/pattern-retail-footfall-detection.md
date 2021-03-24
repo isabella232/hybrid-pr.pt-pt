@@ -7,12 +7,12 @@ ms.date: 10/31/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 10/31/2019
-ms.openlocfilehash: 0bf07bb38537f530a0adb3569c43d53af13b8d56
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 866557ec3af2337e9f034da84cf417675508563b
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911223"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895334"
 ---
 # <a name="footfall-detection-pattern"></a>Padrão de deteção de rodapé
 
@@ -44,16 +44,16 @@ Aqui está um resumo de como a solução funciona:
 
 Esta solução utiliza os seguintes componentes:
 
-| Camada | Componente | Description |
+| Camada | Componente | Descrição |
 |----------|-----------|-------------|
 | Hardware na loja | [Kit de visão AI Dev personalizado](https://azure.github.io/Vision-AI-DevKit-Pages/) | Fornece filtragem na loja usando um modelo ML local que apenas captura imagens de pessoas para análise. A provisionada e atualizada de forma segura através do IoT Hub.<br><br>|
 | Azure | [Azure Event Hubs](/azure/event-hubs/) | O Azure Event Hubs fornece uma plataforma escalável para ingerir dados anonimizados que se integram perfeitamente com o Azure Stream Analytics. |
 |  | [Azure Stream Analytics](/azure/stream-analytics/) | Um trabalho do Azure Stream Analytics agrega os dados anonimizados e agrupe-os em janelas de 15 segundos para visualização. |
 |  | [Microsoft Power BI](https://powerbi.microsoft.com/) | O Power BI fornece uma interface de painel fácil de usar para visualizar a saída do Azure Stream Analytics. |
-| Azure Stack Hub | [Serviço de Aplicações](/azure-stack/operator/azure-stack-app-service-overview.md) | O fornecedor de recursos do Serviço de Aplicações (RP) fornece uma base para componentes de borda, incluindo funcionalidades de hospedagem e gestão para aplicações web/APIs e Funções. |
-| | Cluster de motor de serviço Azure Kubernetes [(AKS)](https://github.com/Azure/aks-engine) | O AKS RP com cluster AKS-Engine implantado no Azure Stack Hub fornece um motor escalável e resistente para executar o recipiente Face API. |
+| Azure Stack Hub | [Serviço de Aplicações](/azure-stack/operator/azure-stack-app-service-overview) | O fornecedor de recursos do Serviço de Aplicações (RP) fornece uma base para componentes de borda, incluindo funcionalidades de hospedagem e gestão para aplicações web/APIs e Funções. |
+| | Cluster de motor de serviço Azure Kubernetes [(AKS)](https://github.com/Azure/aks-engine) | O AKS RP com AKS-Engine cluster implantado no Azure Stack Hub fornece um motor escalável e resistente para executar o recipiente Face API. |
 | | Serviços Cognitivos Azure [enfrentam recipientes de API](/azure/cognitive-services/face/face-how-to-install-containers)| O Azure Cognitive Services RP com recipientes face API fornece deteção demográfica, emoção e visitante único na rede privada de Contoso. |
-| | Blob Storage | As imagens captadas no Kit AI Dev são enviadas para o armazenamento de bolhas do Azure Stack Hub. |
+| | Armazenamento de Blobs | As imagens captadas no Kit AI Dev são enviadas para o armazenamento de bolhas do Azure Stack Hub. |
 | | Funções do Azure | Uma Função Azure em execução no Azure Stack Hub recebe a entrada do armazenamento de bolhas e gere as interações com a API face. Emite dados anonimizados para um cluster de Centros de Eventos localizado em Azure.<br><br>|
 
 ## <a name="issues-and-considerations"></a>Problemas e considerações

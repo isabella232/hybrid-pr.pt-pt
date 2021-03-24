@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: ab0eb885e7b0fefaca8991522712652f979d8712
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910915"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895317"
 ---
 # <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Padrões híbridos e exemplos de solução para Azure e Azure Stack
 
@@ -31,7 +31,7 @@ As aplicações que abrangem nuvens também são referidas como *aplicações h�
 
 Os cenários de aplicações híbridas variam muito com os recursos disponíveis para o desenvolvimento. Abrangem também considerações como geografia, segurança, acesso à Internet, entre outros. Embora os padrões e soluções aqui descritos possam não abordar todos os requisitos, eles fornecem orientações e exemplos para explorar e reutilizar enquanto implementam soluções híbridas.
 
-## <a name="design-patterns"></a>Padrões de estrutura
+## <a name="design-patterns"></a>Padrões de design
 
 Padrões de design abate orientação de design repetível generalizada, a partir de cenários e experiências de clientes do mundo real. Um padrão é abstrato, permitindo que seja aplicável a diferentes tipos de cenários ou indústrias verticais. Cada padrão documenta o contexto e o problema, e fornece uma visão geral de um exemplo de solução. O exemplo da solução pretende ser uma possível implementação do padrão.
 
@@ -49,4 +49,4 @@ Guias de implantação passo a passo ajudam na implementação de um exemplo de 
 - Veja a [família de produtos e soluções Azure Stack](/azure-stack) para saber mais sobre todo o portfólio de produtos e soluções.
 - Explore as secções "Padrões" e "Guias de implementação de soluções" do TOC para saber mais sobre cada um.
 - Leia sobre considerações de design de [aplicativos Híbridos](overview-app-design-considerations.md) para rever pilares de qualidade de software para projetar, implementar e operar aplicações híbridas.
-- [Crie um ambiente de desenvolvimento no Azure Stack](/azure-stack/user/azure-stack-dev-start.md) e [implemente a sua primeira aplicação](/azure-stack/user/azure-stack-dev-start-deploy-app.md) no Azure Stack.
+- [Crie um ambiente de desenvolvimento no Azure Stack](/azure-stack/user/azure-stack-dev-start) e [implemente a sua primeira aplicação](/azure-stack/user/azure-stack-dev-start-deploy-app) no Azure Stack.

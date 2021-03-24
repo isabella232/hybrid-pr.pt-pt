@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 5ae6c4323324fa104cd0e5c7b5198492be14b8eb
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: ed2ad5bed8f4bd80d4a40ab7600842d5544ff97d
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886820"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895419"
 ---
 # <a name="deploy-an-app-that-scales-cross-cloud-using-azure-and-azure-stack-hub"></a>Implemente uma aplicação que escala a nuvem cruzada usando O Azure e Azure Stack Hub
 
@@ -30,7 +30,7 @@ Nesta solução, você construirá um ambiente de amostra para:
 > - Aprenda a monitorizar e a rastrear as suas implementações.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![diagrama de pilares híbridos](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub é uma extensão do Azure. O Azure Stack Hub traz a agilidade e inovação da computação em nuvem para o seu ambiente no local, permitindo a única nuvem híbrida que permite construir e implementar aplicações híbridas em qualquer lugar.  
 > 
 > O artigo [Projeto de aplicação híbrido considera](overview-app-design-considerations.md) os pilares da qualidade do software (colocação, escalabilidade, disponibilidade, resiliência, gestão e segurança) para conceber, implementar e operar aplicações híbridas. As considerações de design ajudam na otimização do design de aplicações híbridas, minimizando os desafios em ambientes de produção.
@@ -39,16 +39,16 @@ Nesta solução, você construirá um ambiente de amostra para:
 
 - Subscrição do Azure. Se necessário, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
 - Um sistema integrado Azure Stack Hub ou implementação do Azure Stack Development Kit (ASDK).
-  - Para obter instruções sobre a instalação do Azure Stack Hub, consulte [instalar o ASDK](/azure-stack/asdk/asdk-install.md).
+  - Para obter instruções sobre a instalação do Azure Stack Hub, consulte [instalar o ASDK](/azure-stack/asdk/asdk-install).
   - Para um script de automatização pós-implantação ASDK, vá a: [https://github.com/mattmcspirit/azurestack](https://github.com/mattmcspirit/azurestack)
   - Esta instalação pode requerer algumas horas para ser concluída.
-- Implementar serviços paaS do Serviço de [Aplicações](/azure-stack/operator/azure-stack-app-service-deploy.md) para o Azure Stack Hub.
-- [Crie planos/ofertas](/azure-stack/operator/service-plan-offer-subscription-overview.md) dentro do ambiente Azure Stack Hub.
-- [Crie subscrição de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) dentro do ambiente Azure Stack Hub.
+- Implementar serviços paaS do Serviço de [Aplicações](/azure-stack/operator/azure-stack-app-service-deploy) para o Azure Stack Hub.
+- [Crie planos/ofertas](/azure-stack/operator/service-plan-offer-subscription-overview) dentro do ambiente Azure Stack Hub.
+- [Crie subscrição de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) dentro do ambiente Azure Stack Hub.
 - Crie uma aplicação web dentro da subscrição do inquilino. Tome nota do novo URL da aplicação web para utilização posterior.
 - Implementar a máquina virtual Azure Pipelines (VM) dentro da subscrição do inquilino.
 - É necessário windows server 2016 VM com .NET 3.5. Este VM será construído na subscrição do inquilino no Azure Stack Hub como o agente de construção privada.
-- [O Windows Server 2016 com imagem VM SQL 2017](/azure-stack/operator/azure-stack-add-vm-image.md) está disponível no Azure Stack Hub Marketplace. Se esta imagem não estiver disponível, trabalhe com um Azure Stack Hub Operator para garantir que é adicionada ao ambiente.
+- [O Windows Server 2016 com imagem VM SQL 2017](/azure-stack/operator/azure-stack-add-vm-image) está disponível no Azure Stack Hub Marketplace. Se esta imagem não estiver disponível, trabalhe com um Azure Stack Hub Operator para garantir que é adicionada ao ambiente.
 
 ## <a name="issues-and-considerations"></a>Problemas e considerações
 
@@ -79,7 +79,7 @@ Atualize o ficheiro da zona DNS para o domínio. A Azure AD verificará a propri
 Confule a integração contínua híbrida e a implementação contínua (CI/CD) para implementar aplicações web para Azure e Azure Stack Hub e para alterar automaticamente ambas as nuvens.
 
 > [!Note]  
-> Azure Stack Hub com imagens adequadas sincronizadas para executar (Windows Server e SQL) e implementação do Serviço de Aplicações são necessárias. Para mais informações, reveja a documentação do Serviço de Aplicações [Pré-requisitos para a implementação do Serviço de Aplicações no Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Azure Stack Hub com imagens adequadas sincronizadas para executar (Windows Server e SQL) e implementação do Serviço de Aplicações são necessárias. Para mais informações, reveja a documentação do Serviço de Aplicações [Pré-requisitos para a implementação do Serviço de Aplicações no Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 ### <a name="add-code-to-azure-repos"></a>Adicionar código a Azure Repos
 
@@ -157,7 +157,7 @@ A Azure Pipelines e a Azure DevOps Services fornecem um oleoduto altamente confi
   
       ![Selecione pacote ou pasta para ambiente de Serviço de Aplicações Azure](media/solution-deployment-guide-cross-cloud-scaling/image12.png)
 
-      ![Selecione pacote ou pasta para ambiente de Serviço de Aplicações Azure](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
+      ![Diálogo do selecionador de pasta 1](media/solution-deployment-guide-cross-cloud-scaling/image13.png)
 
 9. Guarde todas as alterações e volte a **lançar o gasoduto**.
 
@@ -194,7 +194,7 @@ A Azure Pipelines e a Azure DevOps Services fornecem um oleoduto altamente confi
 
     ![Selecione pasta para implementação do serviço de aplicações Azure](media/solution-deployment-guide-cross-cloud-scaling/image22.png)
 
-    ![Selecione pasta para implementação do serviço de aplicações Azure](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
+    ![Diálogo do selecionador de pasta 2](media/solution-deployment-guide-cross-cloud-scaling/image23.png)
 
 18. No separador Variável adicione uma variável `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` nomeada, definir o seu valor como **verdadeiro**, e âmbito para Azure Stack.
 
@@ -211,7 +211,7 @@ A Azure Pipelines e a Azure DevOps Services fornecem um oleoduto altamente confi
 21. Guarde todas as alterações.
 
 > [!Note]  
-> Algumas configurações para as tarefas podem ter sido definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa; em vez disso, o item ambiente parental deve ser selecionado para editar estas definições.
+> Algumas configurações para as tarefas podem ter sido definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa; em vez disso, o item ambiente parental deve ser selecionado para editar estas definições.
 
 ## <a name="publish-to-azure-stack-hub-via-visual-studio"></a>Publicar no Azure Stack Hub via Visual Studio
 
@@ -242,7 +242,7 @@ Agora que a informação do ponto final existe, a ligação Azure Pipelines para
 ## <a name="develop-the-app-build"></a>Desenvolver a construção de aplicativos
 
 > [!Note]  
-> Azure Stack Hub com imagens adequadas sincronizadas para executar (Windows Server e SQL) e implementação do Serviço de Aplicações são necessárias. Para obter mais informações, consulte [Pré-requisitos para a implementação do Serviço de Aplicações no Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Azure Stack Hub com imagens adequadas sincronizadas para executar (Windows Server e SQL) e implementação do Serviço de Aplicações são necessárias. Para obter mais informações, consulte [Pré-requisitos para a implementação do Serviço de Aplicações no Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 Utilize [modelos de Gestor de Recursos Azure](https://azure.microsoft.com/resources/templates/) como código de aplicação web do Azure Repos para implementar em ambas as nuvens.
 
@@ -286,13 +286,13 @@ Criar uma definição de lançamento é o passo final no processo de construçã
 
 2. No separador **Versões,** selecione **[ + ]** e, em seguida, escolha Criar **definição de desbloqueio**.
 
-3. No **Selecionar um Modelo**, escolha a **implementação do serviço de aplicações Azure**e, em seguida, selecione **Apply**.
+3. No **Selecionar um Modelo**, escolha a **implementação do serviço de aplicações Azure** e, em seguida, selecione **Apply**.
 
 4. No **Add artifact**, a partir da **Definição Origem (Definição build)**, selecione a aplicação de construção Azure Cloud.
 
 5. No **separador Pipeline,** selecione a ligação **1 Fase**, **1 Para** **Ver as tarefas ambientais**.
 
-6. No separador **Tarefas, insira** O Azure como **o nome Ambiente** e selecione o EP AzureCloud Traders-Web da lista de **subscrições Azure.**
+6. No separador **Tarefas, insira** O Azure como **o nome Ambiente** e selecione o EP Traders-Web AzureCloud da lista de **subscrições do Azure.**
 
 7. Introduza o nome de **serviço de aplicações Azure**, que está `northwindtraders` na próxima captura do ecrã.
 
@@ -318,18 +318,18 @@ Criar uma definição de lançamento é o passo final no processo de construçã
 
 18. Sob **a seleção de agente,** escolha **AzureStack -b Douglas Fir** da lista de filas do **Agente.**
 
-19. Para **implementar o Serviço de Aplicações Azure**, selecione o Pacote ou **pasta** válido para o ambiente. No **Ficheiro ou Na Pasta Select**, selecione **OK** para a **localização**da pasta .
+19. Para **implementar o Serviço de Aplicações Azure**, selecione o Pacote ou **pasta** válido para o ambiente. No **Ficheiro ou Na Pasta Select**, selecione **OK** para a **localização** da pasta .
 
 20. No **separador Variável,** encontre a variável `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` nomeada. Desa estale o valor variável para **verdadeiro,** e desa esta medida para **o Azure Stack Hub**.
 
-21. No **separador Pipeline,** selecione o ícone **de disparo de implementação contínua** para o artefacto NorthwindCloud Traders-Web e desembra o gatilho de **implementação contínua** para **Ativado**. Faça o mesmo com o artefacto **northwindCloud traders-vessel.**
+21. No **separador Pipeline,** selecione o ícone **de disparo de implementação contínua** para o artefacto de Traders-Web NorthwindCloud e desembra o gatilho de **implementação contínua** para **Ativado**. Faça o mesmo com o artefacto **northwindCloud traders-vessel.**
 
 22. Para o ambiente Azure Stack Hub, selecione o ícone **de condições de pré-implantação** para definir o gatilho para **depois do lançamento**.
 
 23. Guarde todas as alterações.
 
 > [!Note]  
-> Algumas definições para tarefas de libertação são definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa, mas podem ser modificadas nos itens do ambiente dos pais.
+> Algumas definições para tarefas de libertação são definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa, mas podem ser modificadas nos itens do ambiente dos pais.
 
 ## <a name="create-a-release"></a>Criar um lançamento
 

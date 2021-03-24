@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 27d07070becfa902a715b451baae7c81c7e4b46f
-ms.sourcegitcommit: 56980e3c118ca0a672974ee3835b18f6e81b6f43
+ms.openlocfilehash: 9fa2c351d2c13d85fe1adb17a35e165de96ea2a2
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88886837"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895436"
 ---
 # <a name="direct-traffic-with-a-geo-distributed-app-using-azure-and-azure-stack-hub"></a>Tráfego direto com uma app geo-distribuída usando Azure e Azure Stack Hub
 
@@ -56,12 +56,12 @@ Antes de construir uma pegada de aplicativo distribuída, ajuda a saber as segui
 
 - **Estratégia para escalar a pegada da aplicação:** Decida se a pegada da aplicação será distribuída por vários ambientes do Serviço de Aplicações numa única região, várias regiões ou uma mistura de ambas as abordagens. A decisão deve basear-se nas expectativas de onde o tráfego de clientes terá origem e em que ponto o resto da infraestrutura de back-end suportada de uma aplicação pode escalar. Por exemplo, com uma aplicação 100% apátrida, uma aplicação pode ser massivamente dimensionada usando uma combinação de múltiplos ambientes de Serviço de Aplicações por região de Azure, multiplicados por ambientes de Serviço de Aplicações implantados em várias regiões do Azure. Com mais de 15 regiões globais de Azure disponíveis para escolher, os clientes podem realmente construir uma pegada de aplicações de hiperescala em todo o mundo. Para a aplicação de amostras aqui utilizada, três ambientes de Serviço de Aplicações foram criados numa única região de Azure (South Central US).
 
-- **Convenção de nomeação para os ambientes do Serviço de Aplicações:** Cada ambiente de Serviço de Aplicações requer um nome único. Além de um ou dois ambientes de Serviço de Aplicações, é útil ter uma convenção de nomeação para ajudar a identificar cada ambiente de Serviço de Aplicações. Para a aplicação de amostras usada aqui, foi usada uma simples convenção de nomeação. Os nomes dos três ambientes do Serviço de Aplicações são *fe1ase,* *fe2ase*e *fe3ase.*
+- **Convenção de nomeação para os ambientes do Serviço de Aplicações:** Cada ambiente de Serviço de Aplicações requer um nome único. Além de um ou dois ambientes de Serviço de Aplicações, é útil ter uma convenção de nomeação para ajudar a identificar cada ambiente de Serviço de Aplicações. Para a aplicação de amostras usada aqui, foi usada uma simples convenção de nomeação. Os nomes dos três ambientes do Serviço de Aplicações são *fe1ase,* *fe2ase* e *fe3ase.*
 
-- **Convenção de nomeação para as aplicações:** Uma vez que serão implementados vários casos da aplicação, é necessário um nome para cada instância da aplicação implementada. Com o App Service Environment para Aplicações de Energia, o mesmo nome de aplicação pode ser usado em vários ambientes. Uma vez que cada ambiente do Serviço de Aplicações tem um sufixo de domínio único, os desenvolvedores podem optar por reutilizar exatamente o mesmo nome de aplicação em cada ambiente. Por exemplo, um programador poderia ter apps nomeadas da seguinte forma: *myapp.foo1.p.azurewebsites.net*, *myapp.foo2.p.azurewebsites.net*, *myapp.foo3.p.azurewebsites.net*, e assim por diante. Para a aplicação usada aqui, cada instância de aplicação tem um nome único. Os nomes de instâncias de aplicações utilizados são *webfrontend1,* *webfrontend2*e *webfrontend3*.
+- **Convenção de nomeação para as aplicações:** Uma vez que serão implementados vários casos da aplicação, é necessário um nome para cada instância da aplicação implementada. Com o App Service Environment para Aplicações de Energia, o mesmo nome de aplicação pode ser usado em vários ambientes. Uma vez que cada ambiente do Serviço de Aplicações tem um sufixo de domínio único, os desenvolvedores podem optar por reutilizar exatamente o mesmo nome de aplicação em cada ambiente. Por exemplo, um programador poderia ter apps nomeadas da seguinte forma: *myapp.foo1.p.azurewebsites.net*, *myapp.foo2.p.azurewebsites.net*, *myapp.foo3.p.azurewebsites.net*, e assim por diante. Para a aplicação usada aqui, cada instância de aplicação tem um nome único. Os nomes de instâncias de aplicações utilizados são *webfrontend1,* *webfrontend2* e *webfrontend3*.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagrama de pilares híbridos](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub é uma extensão do Azure. O Azure Stack Hub traz a agilidade e inovação da computação em nuvem para o seu ambiente no local, permitindo a única nuvem híbrida que lhe permite construir e implementar aplicações híbridas em qualquer lugar.  
 > 
 > O artigo [Projeto de aplicação híbrido considera](overview-app-design-considerations.md) os pilares da qualidade do software (colocação, escalabilidade, disponibilidade, resiliência, gestão e segurança) para conceber, implementar e operar aplicações híbridas. As considerações de design ajudam na otimização do design de aplicações híbridas, minimizando os desafios em ambientes de produção.
@@ -97,7 +97,7 @@ Atualize o ficheiro da zona DNS para o domínio. A Azure AD pode então verifica
 Confule a integração contínua híbrida/entrega contínua (CI/CD) para implementar a Web App para Azure e Azure Stack Hub, e empurre automaticamente as alterações em ambas as nuvens.
 
 > [!Note]  
-> Azure Stack Hub com imagens adequadas sincronizadas para executar (Windows Server e SQL) e implementação do Serviço de Aplicações são necessárias. Para obter mais informações, consulte [Pré-requisitos para a implementação do Serviço de Aplicações no Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started.md).
+> Azure Stack Hub com imagens adequadas sincronizadas para executar (Windows Server e SQL) e implementação do Serviço de Aplicações são necessárias. Para obter mais informações, consulte [Pré-requisitos para a implementação do Serviço de Aplicações no Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-before-you-get-started).
 
 #### <a name="add-code-to-azure-repos"></a>Adicionar código a Azure Repos
 
@@ -173,7 +173,7 @@ Os Serviços Azure DevOps fornecem um oleoduto altamente configurável e manejá
   
       ![Selecione pacote ou pasta para o ambiente do Serviço de Aplicações Azure em Serviços Azure DevOps](media/solution-deployment-guide-geo-distributed/image12.png)
 
-      ![Selecione pacote ou pasta para o ambiente do Serviço de Aplicações Azure em Serviços Azure DevOps](media/solution-deployment-guide-geo-distributed/image13.png)
+      ![Diálogo do selecionador de pasta 1](media/solution-deployment-guide-geo-distributed/image13.png)
 
 9. Guarde todas as alterações e volte a **lançar o gasoduto**.
 
@@ -212,7 +212,7 @@ Os Serviços Azure DevOps fornecem um oleoduto altamente configurável e manejá
 
     ![Selecione pasta para implantação do serviço de aplicações Azure em serviços Azure DevOps](media/solution-deployment-guide-geo-distributed/image22.png)
 
-    ![Selecione pasta para implantação do serviço de aplicações Azure em serviços Azure DevOps](media/solution-deployment-guide-geo-distributed/image23.png)
+    ![Diálogo do selecionador de pasta 2](media/solution-deployment-guide-geo-distributed/image23.png)
 
 18. No separador Variável adicione uma variável `VSTS\_ARM\_REST\_IGNORE\_SSL\_ERRORS` nomeada, definir o seu valor como **verdadeiro**, e âmbito para Azure Stack Hub.
 
@@ -229,7 +229,7 @@ Os Serviços Azure DevOps fornecem um oleoduto altamente configurável e manejá
 21. Guarde todas as alterações.
 
 > [!Note]  
-> Algumas configurações para as tarefas podem ter sido definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch&view=vsts#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa; em vez disso, o item ambiente parental deve ser selecionado para editar estas definições.
+> Algumas configurações para as tarefas podem ter sido definidas automaticamente como [variáveis ambientais](/azure/devops/pipelines/release/variables?tabs=batch#custom-variables) ao criar uma definição de libertação a partir de um modelo. Estas definições não podem ser modificadas nas definições de tarefa; em vez disso, o item ambiente parental deve ser selecionado para editar estas definições.
 
 ## <a name="part-2-update-web-app-options"></a>Parte 2: Atualizar as opções de aplicações web
 
@@ -280,7 +280,7 @@ Por exemplo, para adicionar entradas de DNS para northwindcloud.com e www \. nor
 
 2. Localize a página para gerir os registos DNS. Cada fornecedor de domínio tem a sua própria interface de registos DNS. Procure áreas do site com os nomes **Nome de Domínio**, **DNS** ou **Gestão de Servidor de Nomes**.
 
-A página de registos DNS pode ser visualizada nos **meus domínios**. Encontre o **link**denominado ficheiro Zone , **DNS Records**ou **configuração Avançada**.
+A página de registos DNS pode ser visualizada nos **meus domínios**. Encontre o **link** denominado ficheiro Zone , **DNS Records** ou **configuração Avançada**.
 
 A captura de ecrã seguinte mostra um exemplo de uma página de registos DNS:
 
@@ -300,7 +300,7 @@ Depois de adicionar o CNAME, a página de registos DNS parece ser o seguinte exe
 
 1. Num novo separador, inscreva-se no portal Azure.
 
-2. Aceda a Serviços Aplicacionais.
+2. Vá aos Serviços de Aplicações.
 
 3. Selecione aplicativo web.
 
@@ -382,13 +382,13 @@ Para utilizar um certificado no Serviço de Aplicações, aquele tem de cumprir 
 
 #### <a name="prepare-the-web-app"></a>Preparar a aplicação web
 
-Para vincular um certificado SSL personalizado à aplicação web, o [plano de Serviço de Aplicações](https://azure.microsoft.com/pricing/details/app-service/) deve estar no nível **Básico,** **Standard**ou **Premium.**
+Para vincular um certificado SSL personalizado à aplicação web, o [plano de Serviço de Aplicações](https://azure.microsoft.com/pricing/details/app-service/) deve estar no nível **Básico,** **Standard** ou **Premium.**
 
 #### <a name="sign-in-to-azure"></a>Iniciar sessão no Azure
 
 1. Abra o [portal Azure](https://portal.azure.com/) e vá para a aplicação web.
 
-2. A partir do menu esquerdo, selecione **Serviços de Aplicações**e, em seguida, selecione o nome da aplicação web.
+2. A partir do menu esquerdo, selecione **Serviços de Aplicações** e, em seguida, selecione o nome da aplicação web.
 
 ![Selecione aplicativo web no portal Azure](media/solution-deployment-guide-geo-distributed/image33.png)
 
@@ -551,7 +551,7 @@ A aplicação permite [tLS](https://wikipedia.org/wiki/Transport_Layer_Security)
 
 ### <a name="create-a-traffic-manager-profile"></a>Criar um perfil do Gestor de Tráfego
 
-1. Selecione Criar um perfil de gestor de tráfego de rede de **recursos**  >  **Networking**  >  **Traffic Manager profile**  >  **Criar**.
+1. Selecione Criar um perfil de gestor de tráfego de rede de **recursos**  >    >    >  **Criar**.
 
 2. No painel **Criar perfil do Gestor de Tráfego**, preencha o seguinte:
 

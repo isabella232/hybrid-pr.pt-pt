@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 2177b32474dea695967e197acbd4bc1e18422d7b
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: caedbd4758b9ae8c93cf9bb625ed9aac68bfa196
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901495"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895373"
 ---
 # <a name="deploy-an-ai-based-footfall-detection-solution-using-azure-and-azure-stack-hub"></a>Implementar uma solução de deteção de base de IA utilizando o Azure e o Azure Stack Hub
 
@@ -37,22 +37,22 @@ Antes de começar com este guia de implantação, certifique-se de que:
 
 - Reveja o tópico do [padrão de deteção de Footfall.](pattern-retail-footfall-detection.md)
 - Obtenha acesso do utilizador a um Kit de Desenvolvimento de Pilhas Azure (ASDK) ou a instância integrada do Azure Stack Hub, com:
-  - O [Serviço de Aplicações Azure no fornecedor de recursos Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-overview.md) instalado. Precisa de acesso do operador à sua instância do Azure Stack Hub ou trabalhar com o seu administrador para instalar.
+  - O [Serviço de Aplicações Azure no fornecedor de recursos Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-overview) instalado. Precisa de acesso do operador à sua instância do Azure Stack Hub ou trabalhar com o seu administrador para instalar.
   - Uma subscrição de uma oferta que fornece o Serviço de Aplicações e quota de armazenamento. Precisa de acesso do operador para criar uma oferta.
 - Obtenha acesso a uma subscrição do Azure.
   - Se não tiver uma assinatura Azure, inscreva-se para uma [conta de teste gratuita](https://azure.microsoft.com/free/) antes de começar.
 - Crie dois diretores de serviço no seu diretório:
   - Um conjunto para uso com recursos Azure, com acesso no âmbito de subscrição Azure.
   - Um conjunto para uso com recursos do Azure Stack Hub, com acesso no âmbito de subscrição do Azure Stack Hub.
-  - Para saber mais sobre a criação de diretores de serviços e autorizar o acesso, consulte [utilizar uma identidade de aplicação para aceder aos recursos.](/azure-stack/operator/azure-stack-create-service-principals.md) Se preferir utilizar o Azure CLI, consulte [criar um rente-chefe de serviço Azure com Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
+  - Para saber mais sobre a criação de diretores de serviços e autorizar o acesso, consulte [utilizar uma identidade de aplicação para aceder aos recursos.](/azure-stack/operator/azure-stack-create-service-principals) Se preferir utilizar o Azure CLI, consulte [criar um rente-chefe de serviço Azure com Azure CLI](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest&preserve-view=true).
 - Implementar serviços cognitivos Azure em Azure ou Azure Stack Hub.
   - Primeiro, [saiba mais sobre os Serviços Cognitivos.](https://azure.microsoft.com/services/cognitive-services/)
-  - Em [seguida, visite implementar os Serviços Cognitivos Azure para o Azure Stack Hub](/azure-stack/user/azure-stack-solution-template-cognitive-services.md) para implantar serviços cognitivos no Azure Stack Hub. Primeiro tem de se inscrever para ter acesso à pré-visualização.
+  - Em [seguida, visite implementar os Serviços Cognitivos Azure para o Azure Stack Hub](/azure-stack/user/azure-stack-solution-template-cognitive-services) para implantar serviços cognitivos no Azure Stack Hub. Primeiro tem de se inscrever para ter acesso à pré-visualização.
 - Clone ou descarregue um Azure Custom Vision AI Dev Kit não configurado. Para mais detalhes, consulte o [Vision AI DevKit](https://azure.github.io/Vision-AI-DevKit-Pages/).
 - Inscreva-se numa conta Power BI.
 - Uma chave de subscrição de Azure Cognitive Services Face API e URL de ponto final. Pode obter os dois com o teste gratuito [dos Serviços Cognitivos.](https://azure.microsoft.com/try/cognitive-services/?api=face-api) Ou, siga as instruções na [conta Criar um Serviço Cognitivo.](/azure/cognitive-services/cognitive-services-apis-create-account)
 - Instalar os seguintes recursos de desenvolvimento:
-  - [CLI 2.0 do Azure](/azure-stack/user/azure-stack-version-profiles-azurecli2.md)
+  - [CLI 2.0 do Azure](/azure-stack/user/azure-stack-version-profiles-azurecli2)
   - [Docker CE](https://hub.docker.com/search/?type=edition&offering=community)
   - [Porter, o](https://porter.sh/)que está a fazer? Você usa Porter para implementar aplicativos em nuvem usando manifestos de pacote CNAB que são fornecidos para si.
   - [Visual Studio Code](https://code.visualstudio.com/)

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 16c5d7820e8c865a9f88cb00da5cc7c854379414
-ms.sourcegitcommit: d2def847937178f68177507be151df2aa8e25d53
+ms.openlocfilehash: 4480f51b03082f2a0cbb7f2f213e05b7bf488646
+ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86477291"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104895384"
 ---
 # <a name="configure-hybrid-cloud-connectivity-using-azure-and-azure-stack-hub"></a>Configurar conectividade híbrida em nuvem usando Azure e Azure Stack Hub
 
@@ -25,7 +25,7 @@ Nesta solução, você construirá um ambiente de amostra para:
 > - Mantenha um sistema legado enquanto utiliza a implementação de aplicações em escala de nuvem e recursos no Azure global.
 
 > [!Tip]  
-> ![hybrid-pillars.png](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
+> ![Diagrama de pilares híbridos](./media/solution-deployment-guide-cross-cloud-scaling/hybrid-pillars.png)  
 > Microsoft Azure Stack Hub é uma extensão do Azure. O Azure Stack Hub traz a agilidade e inovação da computação em nuvem para o seu ambiente no local, permitindo a única nuvem híbrida que lhe permite construir e implementar aplicações híbridas em qualquer lugar.  
 > 
 > O artigo [Projeto de aplicação híbrido considera](overview-app-design-considerations.md) os pilares da qualidade do software (colocação, escalabilidade, disponibilidade, resiliência, gestão e segurança) para conceber, implementar e operar aplicações híbridas. As considerações de design ajudam na otimização do design de aplicações híbridas, minimizando os desafios em ambientes de produção.
@@ -37,7 +37,7 @@ Alguns componentes são necessários para construir uma implantação híbrida d
 ### <a name="azure"></a>Azure
 
 - Se não tiver uma subscrição do Azure, crie uma [conta gratuita](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) antes de começar.
-- Crie uma [aplicação web](/vsts/build-release/apps/cd/azure/aspnet-core-to-azure-webapp?tabs=vsts&view=vsts) em Azure. Tome nota do URL da aplicação web porque vai precisar dele na solução.
+- Crie uma [aplicação web](/aspnet/core/tutorials/publish-to-azure-webapp-using-vs) em Azure. Tome nota do URL da aplicação web porque vai precisar dele na solução.
 
 ### <a name="azure-stack-hub"></a>Azure Stack Hub
 
@@ -47,9 +47,9 @@ Um parceiro Azure OEM/hardware pode implementar um Azure Stack Hub de produção
    >[!Note]
    >A implantação da ASDK pode demorar até 7 horas, por isso planeie em conformidade.
 
-- Implementar serviços paaS do Serviço de [Aplicações](/azure-stack/operator/azure-stack-app-service-deploy.md) para o Azure Stack Hub.
-- [Crie planos e ofertas](/azure-stack/operator/service-plan-offer-subscription-overview.md) no ambiente Azure Stack Hub.
-- [Crie subscrição de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm.md) dentro do ambiente Azure Stack Hub.
+- Implementar serviços paaS do Serviço de [Aplicações](/azure-stack/operator/azure-stack-app-service-deploy) para o Azure Stack Hub.
+- [Crie planos e ofertas](/azure-stack/operator/service-plan-offer-subscription-overview) no ambiente Azure Stack Hub.
+- [Crie subscrição de inquilino](/azure-stack/operator/azure-stack-subscribe-plan-provision-vm) dentro do ambiente Azure Stack Hub.
 
 ### <a name="azure-stack-hub-components"></a>Componentes do Azure Stack Hub
 
@@ -58,9 +58,9 @@ Um operador do Azure Stack Hub deve implementar o Serviço de Aplicações, cria
 Este exemplo de solução pressupõe que você tem algum conhecimento básico de Azure e Azure Stack Hub. Para saber mais antes de iniciar a solução, leia os seguintes artigos:
 
 - [Introdução ao Azure](https://azure.microsoft.com/overview/what-is-azure/)
-- [Conceitos de chave de hub de pilha de Azure](/azure-stack/operator/azure-stack-overview.md)
+- [Conceitos de chave de hub de pilha de Azure](/azure-stack/operator/azure-stack-overview)
 
-### <a name="before-you-begin"></a>Before you begin
+### <a name="before-you-begin"></a>Antes de começar
 
 Verifique se cumpre os seguintes critérios antes de começar a configurar a conectividade híbrida em nuvem:
 
@@ -80,11 +80,11 @@ Especificações de ligação:
 - **Nome de conexão Azure Stack Hub**: AzureStack-Gateway-Azure-S2SGateway (o portal preencherá automaticamente este valor)
 - **Chave partilhada**: qualquer compatível com hardware VPN, com valores correspondentes em ambos os lados da ligação
 - **Subscrição**: qualquer subscrição preferida
-- **Grupo de recursos**: Teste-Infra
+- **Grupo de recursos**: Test-Infra
 
 Endereços IP de rede e sub-rede:
 
-| Ligação do hub Azure/Azure Stack | Name | Subrede | Endereço IP |
+| Ligação do hub Azure/Azure Stack | Name | Sub-rede | Endereço IP |
 |---|---|---|---|
 | Azure vNet | AplicaçãovNet<br>10.100.102.9/23 | AplicaçõesSubnet<br>10.100.102.0/24 |  |
 |  |  | GatewaySubnet<br>10.100.103.0/24 |  |
@@ -92,7 +92,7 @@ Endereços IP de rede e sub-rede:
 |  |  | GatewaySubnet <br>10.100101.0/24 |  |
 | Gateway de rede virtual Azure | Azure-Gateway |  |  |
 | Gateway de rede virtual Azure Stack Hub | AzureStack-Gateway |  |  |
-| IP Público de Azure | Azure-GatewayPublicIP |  | Determinado na criação |
+| IP Público do Azure | Azure-GatewayPublicIP |  | Determinado na criação |
 | Azure Stack Hub Public IP | AzureStack-GatewayPublicIP |  | Determinado na criação |
 | Gateway de rede local de Azure | AzureStack-S2SGateway<br>   10.100.100.0/23 |  | Valor IP público do Hub Azure Stack |
 | Gateway de rede local Azure Stack Hub | Azure-S2SGateway<br>10.100.102.0/23 |  | Valor IP Público Azure |
@@ -108,12 +108,12 @@ Para criar um vNet em Azure:
 
 1. Utilize o seu navegador para ligar ao [portal Azure](https://portal.azure.com/) e iniciar sação com a sua conta Azure.
 2. Selecione **Criar um recurso**. No campo **'Pesquisar no mercado',** insira 'rede virtual'. Selecione **a rede Virtual** a partir dos resultados.
-3. A partir da lista **de modelos de implementação,** selecione **Resource Manager**e, em seguida, selecione **Criar**.
+3. A partir da lista **de modelos de implementação,** selecione **Resource Manager** e, em seguida, selecione **Criar**.
 4. Na **criação de rede virtual,** configurar as definições VNet. Os nomes dos campos necessários são prefixados com um asterisco vermelho.  Quando introduz um valor válido, o asterisco muda para uma marca de verificação verde.
 
 Para criar um vNet no Azure Stack Hub:
 
-1. Repita os passos acima (1-4) utilizando o portal de **inquilinos**Azure Stack Hub .
+1. Repita os passos acima (1-4) utilizando o portal de **inquilinos** Azure Stack Hub .
 
 ## <a name="add-a-gateway-subnet"></a>Adicionar uma sub-rede do gateway
 
@@ -144,7 +144,7 @@ Utilize os seguintes passos para criar uma porta de entrada de rede virtual em A
    - **Primeira Configuração IP**: O IP público do seu gateway.
      - Selecione **Criar configuração IP gateway**, que o leva à página de **endereços IP público** escolha.
      - Selecione **+Crie novo** para abrir a página **de endereços IP público.**
-     - Insira um **Nome** para o seu endereço IP público. Deixe o SKU como **Básico**e, em seguida, selecione **OK** para guardar as suas alterações.
+     - Insira um **Nome** para o seu endereço IP público. Deixe o SKU como **Básico** e, em seguida, selecione **OK** para guardar as suas alterações.
 
        > [!Note]
        > Atualmente, o VPN Gateway apenas suporta a atribuição de endereços IP dinâmicos públicos. No entanto, isto não significa que o endereço IP mude depois de ser atribuído ao seu gateway VPN. A única vez que o endereço IP público muda é quando o gateway é eliminado e recriado. Redimensionamento, reposição ou outras melhorias/manutenção interna para o seu gateway VPN não alterem o endereço IP.
@@ -170,8 +170,8 @@ O gateway de rede local refere-se normalmente à sua localização no local. Voc
   >Se a sua rede no local mudar ou precisar de alterar o endereço IP público para o dispositivo VPN, poderá atualizar estes valores mais tarde.
 
 1. No portal, selecione **+Criar um recurso.**
-2. Na caixa de pesquisa, insira **o gateway de rede local**e, em seguida, selecione **Enter** para pesquisar. Uma lista de resultados será exibida.
-3. Selecione **O gateway de rede local**e, em seguida, selecione **Criar** para abrir a página de gateway de **rede local.**
+2. Na caixa de pesquisa, insira **o gateway de rede local** e, em seguida, selecione **Enter** para pesquisar. Uma lista de resultados será exibida.
+3. Selecione **O gateway de rede local** e, em seguida, selecione **Criar** para abrir a página de gateway de **rede local.**
 4. No **Portal da rede local,** especifique os valores do seu gateway de rede local utilizando os **nossos valores de exemplo Tutorial**. Incluir os seguintes valores adicionais:
 
     - **Endereço IP**: O endereço IP público do dispositivo VPN a que pretende que o Azure ou o Azure Stack Hub se conectem. Especifique um endereço IP público válido que não esteja por trás de um NAT para que o Azure possa chegar ao endereço. Se não tiver o endereço IP neste momento, pode utilizar um valor do exemplo como espaço reservado. Terá de voltar e substituir o espaço reservado pelo endereço IP público do seu dispositivo VPN. O Azure não pode ligar-se ao dispositivo até fornecer um endereço válido.
@@ -204,7 +204,7 @@ Utilize os seguintes passos para criar uma ligação VPN site-to-site entre o se
     - **Gateway de rede local**: Selecione a porta de entrada de rede local que criou.
     - **Ligação Nome**: Este nome é autopovoado utilizando os valores dos dois gateways.
     - **Tecla partilhada**: Este valor deve corresponder ao valor que está a utilizar para o seu dispositivo VPN local no local. O exemplo tutorial usa 'abc123', mas deve usar algo mais complexo. O importante é que este valor *deve* ser o mesmo valor que especifica ao configurar o seu dispositivo VPN.
-    - Os valores de **Subscrição,** **Grupo de Recursos**e **Localização** são fixos.
+    - Os valores de **Subscrição,** **Grupo de Recursos** e **Localização** são fixos.
 
 6. Selecione **OK** para criar a sua ligação.
 
