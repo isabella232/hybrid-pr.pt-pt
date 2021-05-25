@@ -3,16 +3,16 @@ title: Fora da deteção de stock usando Azure e Azure Stack Edge
 description: Saiba como utilizar os serviços Azure e Azure Stack Edge para implementar fora da deteção de stock.
 author: BryanLa
 ms.topic: article
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 865f63bc4234e50ed169aa29cefdb1886750594c
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: b25a6391c4e64fa7018031bac4fb7d098c56b529
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911192"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343880"
 ---
 # <a name="out-of-stock-detection-at-the-edge-pattern"></a>Fora da deteção de stock no padrão de borda
 
@@ -44,14 +44,14 @@ Eis como funciona a solução:
 
 Esta solução utiliza os seguintes componentes:
 
-| Camada | Componente | Description |
+| Camada | Componente | Descrição |
 |----------|-----------|-------------|
 | Hardware no local | Câmera de rede | É necessária uma câmara de rede, com um feed HTTP ou RTSP para fornecer as imagens para inferência. |
-| Azure | Azure IoT Hub | [O Azure IoT Hub](/azure/iot-hub/) trata do fornecimento e mensagens dos dispositivos de borda. |
+| Azure | Hub IoT do Azure | [O Azure IoT Hub](/azure/iot-hub/) trata do fornecimento e mensagens dos dispositivos de borda. |
 |  | Azure Time Series Insights | [Azure Time Series Insights](/azure/time-series-insights/) armazena as mensagens do IoT Hub para visualização. |
 |  | Power BI | [O Microsoft Power BI](https://powerbi.microsoft.com/) fornece relatórios focados no negócio de eventos fora de stock. O Power BI fornece uma interface de painel fácil de usar para visualizar a saída do Azure Stream Analytics. |
 | Azure Stack Edge ou<br>Dispositivo Azure IoT Edge | Azure IoT Edge | [O Azure IoT Edge](/azure/iot-edge/) orquestra o tempo de funcionamento dos contentores no local e trata da gestão e atualizações dos dispositivos.|
-| | Onda cerebral do projeto Azure | Num dispositivo Azure Stack Edge, [o Project Brainwave](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) utiliza arrays de porta programáveis de campo (FPGAs) para acelerar a inferição de ML.|
+| | Onda cerebral do projeto Azure | Num dispositivo Azure Stack Edge, [o Project Brainwave](https://blogs.microsoft.com/ai/build-2018-project-brainwave/) utiliza Field-Programmable Gate Arrays (FPGAs) para acelerar a inferição de ML.|
 
 ## <a name="issues-and-considerations"></a>Problemas e considerações
 
@@ -81,4 +81,4 @@ Para saber mais sobre os tópicos introduzidos neste artigo:
 - Consulte [considerações de design de aplicativos Híbridos](overview-app-design-considerations.md) para saber mais sobre as melhores práticas e para obter respostas a quaisquer perguntas adicionais.
 - Veja a [família de produtos e soluções Azure Stack](/azure-stack) para saber mais sobre todo o portfólio de produtos e soluções.
 
-Quando estiver pronto para testar o exemplo da solução, continue com os [dados Tiered para guia de implementação de solução analítica](https://aka.ms/edgeinferencingdeploy). O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes.
+Quando estiver pronto para testar o exemplo da solução, continue com o guia de implementação da [solução de inferenculação Edge ML](https://aka.ms/edgeinferencingdeploy). O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes.

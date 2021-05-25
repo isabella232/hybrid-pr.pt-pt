@@ -3,18 +3,18 @@ title: Padrões híbridos e exemplos de solução para Azure e Azure Stack Hub
 description: Uma visão geral dos padrões híbridos e exemplos de solução para aprender e construir soluções híbridas no Azure e no Azure Stack Hub.
 author: BryanLa
 ms.topic: overview
-ms.date: 11/05/2019
+ms.date: 05/24/2021
 ms.author: bryanla
 ms.reviewer: anajod
-ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: 4f86e5ae4b8b9bd7693617b07419b67dfcf05dc1
-ms.sourcegitcommit: 962334135b63ac99c715e7bc8fb9282648ba63c9
+ms.lastreviewed: 05/24/2021
+ms.openlocfilehash: 9f3f13c23bec31c5132c7e90294356b9463fd72b
+ms.sourcegitcommit: cf2c4033d1b169f5b63980ce1865281366905e2e
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "104895317"
+ms.lasthandoff: 05/25/2021
+ms.locfileid: "110343863"
 ---
-# <a name="hybrid-patterns-and-solution-examples-for-azure-and-azure-stack"></a>Padrões híbridos e exemplos de solução para Azure e Azure Stack
+# <a name="hybrid-solution-patterns-and-examples-for-azure-and-azure-stack"></a>Padrões e exemplos de soluções híbridas para Azure e Azure Stack
 
 A Microsoft fornece produtos e soluções Azure Stack como um ecossistema Azure consistente. A família Microsoft Azure Stack é uma extensão do Azure.
 
@@ -29,11 +29,11 @@ O Azure Stack traz a agilidade da computação em nuvem para o seu ambiente no l
 
 As aplicações que abrangem nuvens também são referidas como *aplicações híbridas.* Pode construir aplicativos híbridos em nuvem em Azure e implantá-los no seu datacenter conectado ou desligado localizado em qualquer lugar.
 
-Os cenários de aplicações híbridas variam muito com os recursos disponíveis para o desenvolvimento. Abrangem também considerações como geografia, segurança, acesso à Internet, entre outros. Embora os padrões e soluções aqui descritos possam não abordar todos os requisitos, eles fornecem orientações e exemplos para explorar e reutilizar enquanto implementam soluções híbridas.
+Os cenários de aplicações híbridas variam muito com os recursos disponíveis para o desenvolvimento. Abrangem também considerações como geografia, segurança, acesso à Internet, entre outros. Embora os padrões e exemplos de solução aqui descritos possam não abordar todos os requisitos, eles fornecem orientações e exemplos para explorar e reutilizar enquanto implementam soluções híbridas.
 
-## <a name="design-patterns"></a>Padrões de design
+## <a name="solution-patterns"></a>Padrões de solução
 
-Padrões de design abate orientação de design repetível generalizada, a partir de cenários e experiências de clientes do mundo real. Um padrão é abstrato, permitindo que seja aplicável a diferentes tipos de cenários ou indústrias verticais. Cada padrão documenta o contexto e o problema, e fornece uma visão geral de um exemplo de solução. O exemplo da solução pretende ser uma possível implementação do padrão.
+Padrões de solução abatem orientação de design repetível generalizada, a partir de cenários e experiências de clientes do mundo real. Um padrão é abstrato, permitindo que seja aplicável a diferentes tipos de cenários ou indústrias verticais. Cada padrão documenta o contexto e o problema, e fornece uma visão geral de um exemplo de solução. O exemplo da solução pretende ser uma possível implementação do padrão.
 
 Existem dois tipos de artigos de padrão:
 
