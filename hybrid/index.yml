@@ -9,7 +9,7 @@ metadata:
   ms.topic: hub-page
   author: BryanLa
   ms.author: bryanla
-  ms.date: 03/09/2021
+  ms.date: 06/11/2021
   ms.custom: e2e-hybrid
 highlightedContent:
   items:
@@ -319,6 +319,20 @@ additionalContent:
               text: Dimensionamento dinâmico do Azure Stack Hub para o Azure
             - url: 'https://myinspire.microsoft.com/sessions/4a50e354-b3a8-4d54-9d2a-9dc723ac1030'
               text: Novidades para Azure Stack HCI
+        - title: Desenvolvimento e integração
+          links:
+            - url: 'https://www.youtube.com/watch?v=to8D7Xl9SU8'
+              text: Introdução às aplicações híbridas do Azure Stack
+            - url: 'https://mybuild.microsoft.com/sessions/2debfc2e-f0b3-4adf-bcec-d126930f806f'
+              text: Criar aplicações nativas de cloud para executar em qualquer lugar
+            - url: 'https://mybuild.microsoft.com/sessions/9f56bc10-30bd-42e2-afc8-b61b22260c49'
+              text: Construa aplicações híbridas e multicloud consistentes com Azure Arc (Pergunte aos Especialistas)
+            - url: 'https://www.youtube.com/watch?v=2lw8zOpJTn0'
+              text: Dimensionamento dinâmico do Azure Stack Hub para o Azure
+            - url: 'https://mybuild.microsoft.com/sessions/92bd3e12-fbf4-4278-b68f-fe776b02adfa'
+              text: Apps lógicas - Potenciar o futuro da Integração
+            - url: 'https://mybuild.microsoft.com/sessions/76ebac39-517d-44da-a58e-df4193b5efa9'
+              text: O futuro do desenvolvimento de aplicações modernas com .NET
         - title: Microsoft Edge
           links:
             - url: 'https://github.com/Azure-Samples/AI-Video-Intelligence-Solution-Accelerator'
