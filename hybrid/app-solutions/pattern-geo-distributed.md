@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod2019
-ms.openlocfilehash: 1f6243927390c7a520c2607c722664b2d31fc07f
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 3c839d9bf3b6c3e1ff50cc695fd5f1a1127793d2
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84910884"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281232"
 ---
 # <a name="geo-distributed-app-pattern"></a>Padrão de aplicativo geo-distribuído
 
@@ -23,7 +23,7 @@ Organizações com geografias de grande alcance esforçam-se por distribuir de f
 
 ## <a name="solution"></a>Solução
 
-O padrão de encaminhamento de tráfego geográfico Azure Stack Hub, ou aplicações geo-distribuídas, permite que o tráfego seja direcionado para pontos finais específicos com base em várias métricas. A criação de um Gestor de Tráfego com encaminhamento geográfico e configuração de pontos finais encaminha o tráfego para pontos finais com base nos requisitos regionais, regulação corporativa e internacional e necessidades de dados.
+O padrão de encaminhamento de tráfego geográfico Azure Stack Hub, ou aplicações geo-distribuídas, permite que o tráfego seja direcionado para pontos finais específicos com base em várias métricas. A criação de um Gestor de Tráfego com o encaminhamento geográfico e a configuração de pontos finais liga o tráfego para pontos finais com base nos requisitos regionais, na regulação corporativa e internacional e nas necessidades de dados.
 
 ![Padrão geo-distribuído](media/pattern-geo-distributed/geo-distribution.png)
 
@@ -33,7 +33,7 @@ O padrão de encaminhamento de tráfego geográfico Azure Stack Hub, ou aplicaç
 
 #### <a name="traffic-manager"></a>Gestor de Tráfego
 
-No diagrama, o Traffic Manager está localizado fora da nuvem pública, mas precisa de ser capaz de coordenar o tráfego tanto no centro de dados local como na nuvem pública. O equilibrador encaminha o tráfego para locais geográficos.
+No diagrama, Gestor de Tráfego está localizado fora da nuvem pública, mas precisa de ser capaz de coordenar o tráfego tanto no centro de dados local como na nuvem pública. O equilibrador encaminha o tráfego para locais geográficos.
 
 #### <a name="domain-name-system-dns"></a>Sistema de Nomes de Domínio (DNS)
 
@@ -78,8 +78,8 @@ O padrão garante uma gestão perfeita e uma interface familiar entre ambientes.
 
 Para saber mais sobre os tópicos introduzidos neste artigo:
 
-- Consulte a visão geral do [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) para saber mais sobre como funciona este equilibrador de carga de tráfego baseado em DNS.
+- Consulte a [visão geral Gestor de Tráfego do Azure](/azure/traffic-manager/traffic-manager-overview) para saber mais sobre como funciona este equilibrador de carga de tráfego baseado em DNS.
 - Consulte [considerações de design de aplicativos Híbridos](overview-app-design-considerations.md) para saber mais sobre as melhores práticas e para obter respostas para quaisquer perguntas adicionais.
 - Veja a [família de produtos e soluções Azure Stack](/azure-stack) para saber mais sobre todo o portfólio de produtos e soluções.
 
-Quando estiver pronto para testar o exemplo da solução, continue com o [guia de implementação da solução de aplicações geo-distribuídas.](solution-deployment-guide-geo-distributed.md) O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes. Aprende-se a direcionar o tráfego para pontos finais específicos, com base em várias métricas utilizando o padrão de aplicação geo-distribuído. A criação de um perfil de Gestor de Tráfego com configuração geográfica de encaminhamento e ponto final garante que a informação é encaminhada para pontos finais com base nos requisitos regionais, na regulação corporativa e internacional e nas necessidades dos seus dados.
+Quando estiver pronto para testar o exemplo da solução, continue com o [guia de implementação da solução de aplicações geo-distribuídas.](/azure/architecture/hybrid/deployments/solution-deployment-guide-geo-distributed) O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes. Aprende-se a direcionar o tráfego para pontos finais específicos, com base em várias métricas utilizando o padrão de aplicação geo-distribuído. Criar um perfil Gestor de Tráfego com a configuração de encaminhamento e ponto final baseados geográficos garante que a informação é encaminhada para pontos finais com base nos requisitos regionais, na regulação corporativa e internacional, e nas necessidades dos seus dados.

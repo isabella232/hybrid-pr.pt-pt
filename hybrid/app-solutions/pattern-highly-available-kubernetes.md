@@ -7,12 +7,12 @@ ms.date: 12/03/2020
 ms.author: bryanla
 ms.reviewer: bryanla
 ms.lastreviewed: 12/03/2020
-ms.openlocfilehash: 454cc0a0531882b7a8ec050a461420ce13eebcfe
-ms.sourcegitcommit: df7e3e6423c3d4e8a42dae3d1acfba1d55057258
+ms.openlocfilehash: f8a733bcdab871695e552ec687d42e3ff4230490
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96911794"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281317"
 ---
 # <a name="high-availability-kubernetes-cluster-pattern"></a>Padrão de cluster kubernetes de alta disponibilidade
 
@@ -63,7 +63,7 @@ Vá a [Questões e Limitações Conhecidas](https://github.com/Azure/aks-engine/
 
 **A Azure Virtual Network (VNet)** é usada para fornecer a infraestrutura de rede em cada Azure Stack Hub para as Máquinas Virtuais (VMs) que hospedam a infraestrutura de cluster Kubernetes.
 
-**O Azure Load Balancer** é utilizado para o Ponto final da API de Kubernetes e para o Controlador Nginx Ingress. O equilibrador de carga encaminha o tráfego externo (por exemplo, Internet) para nós e VMs oferecendo um serviço específico.
+**Balanceador de Carga do Azure** é utilizado para o Ponto Final API de Kubernetes e para o Controlador Nginx Ingress. O equilibrador de carga encaminha o tráfego externo (por exemplo, Internet) para nós e VMs oferecendo um serviço específico.
 
 **O Registo de Contentores Azure (ACR)** é utilizado para armazenar imagens privadas do Docker e gráficos helm, que são implantados no cluster. O motor AKS pode autenticar-se com o registo do contentor utilizando uma identidade AD AZure. Kubernetes não requer ACR. Pode utilizar outros registos de contentores, como o Docker Hub.
 
@@ -73,7 +73,7 @@ Vá a [Questões e Limitações Conhecidas](https://github.com/Azure/aks-engine/
 
 **O Azure Monitor** recolhe e armazena métricas e registos, incluindo métricas de plataforma para os serviços Azure na solução e telemetria de aplicações. Utilize estes dados para monitorizar a aplicação, configurar alertas e dashboards e realizar a análise de causa raiz de falhas. O Azure Monitor integra-se com Kubernetes para recolher métricas de controladores, nós e contentores, bem como troncos de contentores e troncos de nó master. Vá ao [Azure Monitor Overview](/azure/azure-monitor/overview) para saber mais.
 
-**O Azure Traffic Manager** é um equilibrador de carga baseado em DNS que lhe permite distribuir o tráfego da melhor forma para serviços em diferentes regiões do Azure ou implementações do Azure Stack Hub. O Gestor de Tráfego também fornece alta disponibilidade e capacidade de resposta. Os pontos finais da aplicação devem estar acessíveis a partir do exterior. Existem outras soluções no local também disponíveis.
+**Gestor de Tráfego do Azure** é um equilibrador de carga baseado em DNS que lhe permite distribuir o tráfego da melhor forma para serviços em diferentes regiões do Azure ou implementações do Azure Stack Hub. Gestor de Tráfego também proporciona elevada disponibilidade e capacidade de resposta. Os pontos finais da aplicação devem estar acessíveis a partir do exterior. Existem outras soluções no local também disponíveis.
 
 **O Controlador Kubernetes Ingress** expõe as rotas HTTP(S) a serviços num cluster kubernetes. Para este fim, pode utilizar-se o Nginx ou qualquer controlador de entrada adequado.
 
@@ -121,7 +121,7 @@ Ao selecionar tamanhos de VM para a implementação inicial, existem várias con
 
 - **Custo** - Ao planear os nós dos seus trabalhadores, tenha em mente o custo global por VM que irá incorrer. Por exemplo, se as cargas de trabalho da sua aplicação requerem recursos limitados, deverá planear a implantação de VMs de menor dimensão. O Azure Stack Hub, tal como o Azure, é normalmente cobrado numa base de consumo, por isso o dimensionamento adequado dos VMs para os papéis de Kubernetes é crucial para otimizar os custos de consumo. 
 
-- **Escalaability** - A escalabilidade do cluster é conseguida escalando e superando o número de nós mestres e trabalhadores, ou adicionando piscinas de nó adicionais (não disponível hoje no Azure Stack Hub). A escala do cluster pode ser feita com base em dados de desempenho, recolhidos utilizando Insights de Contentores (Azure Monitor + Log Analytics). 
+- **Escalaability** - A escalabilidade do cluster é conseguida escalando e superando o número de nós mestres e trabalhadores, ou adicionando piscinas de nó adicionais (não disponível hoje no Azure Stack Hub). A escala do cluster pode ser feita com base em dados de desempenho, recolhidos utilizando Informações de contentores (Azure Monitor + Log Analytics). 
 
     Se a sua aplicação precisar de mais (ou menos) recursos, pode escalar (ou entrar) os seus nós atuais horizontalmente (entre 1 e 50 nós). Se precisar de mais de 50 nós, pode criar um cluster adicional numa subscrição separada. Não é possível escalar os VMs reais verticalmente para outro tamanho VM sem recolocar o cluster.
 
@@ -160,7 +160,7 @@ O bloco anterior considera o tráfego ingresso para a aplicação. Outro tópico
 
 - Imagens de contentores armazenados no Registo de Contentores DockerHub ou Azure
 - Recuperação de gráficos de leme
-- Emissão de dados de Insights de Aplicação (ou outros dados de monitorização)
+- Emissão de Dados Informações de Aplicação (ou outros dados de monitorização)
 
 Alguns ambientes empresariais podem exigir a utilização de servidores proxy _transparentes_ ou _não transparentes._ Estes servidores requerem configuração específica em vários componentes do nosso cluster. A documentação do Motor AKS contém vários detalhes sobre como acomodar proxies de rede. Para mais detalhes, consulte [o Motor AKS e servidores proxy](https://github.com/Azure/aks-engine/blob/master/docs/topics/proxy-servers.md)
 
@@ -190,7 +190,7 @@ Duas instâncias da nossa aplicação serão implementadas em dois clusters indi
 
 Com o Azure, temos a capacidade incorporada de replicar o armazenamento em várias regiões e zonas dentro da nuvem. Atualmente com o Azure Stack Hub não existem formas nativas de replicar o armazenamento em duas instâncias diferentes do Azure Stack Hub - formam duas nuvens independentes sem forma abrangente de as gerir como um conjunto. O planeamento da resiliência das aplicações que atravessam o Azure Stack Hub obriga-o a considerar esta independência no design e implementações da sua aplicação.
 
-Na maioria dos casos, a replicação de armazenamento não será necessária para uma aplicação resiliente e altamente disponível implantada em AKS. Mas deve considerar o armazenamento independente por exemplo do Azure Stack Hub no design da sua aplicação. Se este design for uma preocupação ou um bloqueio de estrada para implementar a solução no Azure Stack Hub, existem possíveis soluções da Microsoft Partners que fornecem anexos de armazenamento. Os anexos de armazenamento fornecem uma solução de replicação de armazenamento através de múltiplos Hubs Azure Stack e Azure. Para mais informações, consulte as [soluções Partner.](#partner-solutions)
+Na maioria dos casos, a replicação de armazenamento não será necessária para uma aplicação resiliente e altamente disponível implantada em AKS. Mas deve considerar o armazenamento independente por exemplo do Azure Stack Hub no design da sua aplicação. Se este design for uma preocupação ou um bloqueio de estrada para implementar a solução no Azure Stack Hub, existem possíveis soluções da Microsoft Partners que fornecem anexos de armazenamento. Armazenamento anexos fornecem uma solução de replicação de armazenamento em vários Hubs Azure Stack e Azure. Para mais informações, consulte as [soluções Partner.](#partner-solutions)
 
 Na nossa arquitetura, estas camadas foram consideradas:
 
@@ -208,13 +208,13 @@ Os dados são a consideração mais importante na maioria dos desenhos de aplica
 
 Alcançar este design depende muito das escolhas tecnológicas. Aqui estão alguns exemplos de solução para implementar uma base de dados de uma forma altamente disponível no Azure Stack Hub:
 
-- [Implementar um grupo de disponibilidade SQL Server 2016 para Azure e Azure Stack Hub](/azure-stack/hybrid/solution-deployment-guide-sql-ha)
+- [Implementar um grupo de disponibilidade SQL Server 2016 para o Azure e o Azure Stack Hub](/azure-stack/hybrid/solution-deployment-guide-sql-ha)
 - [Implemente uma solução MongoDB altamente disponível para O Azure e Azure Stack Hub](/azure-stack/hybrid/solution-deployment-guide-mongodb-ha)
 
 Considerações ao trabalhar com dados em vários locais é uma consideração ainda mais complexa para uma solução altamente disponível e resiliente. Considere:
 
 - Latência e conectividade de rede entre Azure Stack Hubs.
-- Disponibilidade de identidades para serviços e permissões. Cada exemplo do Azure Stack Hub integra-se com um diretório externo. Durante a implementação, opta por utilizar o Azure Ative Directory (Azure AD) ou o Ative Directory Federation Services (ADFS). Como tal, existe o potencial de usar uma única identidade que pode interagir com vários casos independentes do Azure Stack Hub.
+- Disponibilidade de identidades para serviços e permissões. Cada exemplo do Azure Stack Hub integra-se com um diretório externo. Durante a implantação, opta por utilizar os serviços de Azure Ative Directory (Azure AD) ou da Federação de Diretórios Ativos (ADFS). Como tal, existe o potencial de usar uma única identidade que pode interagir com vários casos independentes do Azure Stack Hub.
 
 ## <a name="business-continuity-and-disaster-recovery"></a>Continuidade de negócio e recuperação após desastre
 
@@ -266,13 +266,13 @@ Kubernetes no Azure Stack Hub implantado através do Motor AKS não é um servi�
 
 A infraestrutura Azure Stack Hub já é resistente a falhas, e fornece capacidades como Conjuntos de Disponibilidade para distribuir componentes em vários [domínios de falha e atualização](/azure-stack/user/azure-stack-vm-considerations#high-availability). Mas a tecnologia subjacente (clustering failover) ainda incorre em algum tempo de inatividade para VMs em um servidor físico impactado, se houver uma falha de hardware.
 
-É uma boa prática implementar o seu cluster Kubernetes de produção, bem como a carga de trabalho para dois (ou mais) clusters. Estes clusters devem ser hospedados em diferentes locais ou datacenters, e usar tecnologias como o Azure Traffic Manager para encaminhar os utilizadores com base no tempo de resposta do cluster ou com base na geografia.
+É uma boa prática implementar o seu cluster Kubernetes de produção, bem como a carga de trabalho para dois (ou mais) clusters. Estes clusters devem ser hospedados em diferentes locais ou datacenters, e usar tecnologias como Gestor de Tráfego do Azure para encaminhar os utilizadores com base no tempo de resposta do cluster ou com base na geografia.
 
-![Utilizar o Gestor de Tráfego para controlar os fluxos de tráfego](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager.png)
+![Utilizar Gestor de Tráfego para controlar os fluxos de tráfego](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager.png)
 
-Os clientes que têm um único cluster Kubernetes normalmente conectam-se ao nome IP ou DNS de serviço de uma determinada aplicação. Numa implementação multi-cluster, os clientes devem ligar-se a um nome DNS do Gestor de Tráfego que aponta para os serviços/entradas em cada cluster Kubernetes.
+Os clientes que têm um único cluster Kubernetes normalmente conectam-se ao nome IP ou DNS de serviço de uma determinada aplicação. Numa implementação multi-cluster, os clientes devem ligar-se a um nome DNS Gestor de Tráfego que aponta para os serviços/entradas em cada cluster Kubernetes.
 
-![Utilizar o Gestor de Tráfego para encaminhar para o cluster no local](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager-on-premises.png)
+![Usando Gestor de Tráfego para o cluster de rotas para o aglomerado no local](media/pattern-highly-available-kubernetes/aks-azure-traffic-manager-on-premises.png)
 
 > [!NOTE]
 > Este padrão é também uma [melhor prática para clusters AKS (geridos) em Azure.](/azure/aks/operator-best-practices-multi-region#plan-for-multiregion-deployment)
@@ -333,7 +333,7 @@ O Motor AKS ajuda com as duas tarefas mais importantes:
 
 As imagens de OS de base mais recentes contêm as mais recentes correções de segurança do SO e atualizações de kernel. 
 
-O mecanismo [de atualização não acompanhado](https://wiki.debian.org/UnattendedUpgrades) instala automaticamente atualizações de segurança que são lançadas antes de uma nova versão base de imagem do SO estar disponível no Azure Stack Hub Marketplace. A atualização não acompanhada é ativada por padrão e instala atualizações de segurança automaticamente, mas não reinicia os nós do cluster Kubernetes. Reiniciar os nós pode ser automatizado utilizando a [ **K** bota **RE** **D** Aemon (kured))](/azure/aks/node-updates-kured). Relógios kured para nós Linux que requerem um reboot, em seguida, lidar automaticamente com o reagendamento de cápsulas de corrida e processo de reinicialização de nó.
+O mecanismo [de atualização não acompanhado](https://wiki.debian.org/UnattendedUpgrades) instala automaticamente atualizações de segurança que são lançadas antes de uma nova versão base de imagem do SO estar disponível no Azure Stack Hub Marketplace. A atualização não acompanhada é ativada por padrão e instala atualizações de segurança automaticamente, mas não reinicia os nós do cluster Kubernetes. Reiniciar os nós pode ser automatizado utilizando a [ bota **RE** **D** Aemon (kured))](/azure/aks/node-updates-kured). Relógios kured para nós Linux que requerem um reboot, em seguida, lidar automaticamente com o reagendamento de cápsulas de corrida e processo de reinicialização de nó.
 
 ## <a name="deployment-cicd-considerations"></a>Considerações de implantação (CI/CD)
 
@@ -367,7 +367,7 @@ Se o Gestor de Recursos Azure, a API de Kubernetes, ou ambos não estiverem dire
 [![Visão geral da arquitetura on-prem](media/pattern-highly-available-kubernetes/aks-azure-stack-app-pattern-self-hosted.png)](media/pattern-highly-available-kubernetes/aks-azure-stack-app-pattern-self-hosted.png#lightbox)
 
 > [!NOTE]
-> **E cenários desligados?** Em cenários em que o Azure Stack Hub ou o Kubernetes ou ambos não têm pontos finais de gestão virados para a Internet, ainda é possível utilizar o Azure DevOps para as suas implementações. Você pode usar um Agent Pool auto-hospedado (que é um Agente DevOps que está correndo no local ou no próprio Azure Stack Hub) ou um Azure DevOps Server completamente auto-hospedado no local. O agente auto-alojado necessita apenas de conectividade de saída HTTPS (TCP/443) na Internet.
+> **E cenários desligados?** Em cenários em que o Azure Stack Hub ou o Kubernetes ou ambos não têm pontos finais de gestão virados para a Internet, ainda é possível utilizar o Azure DevOps para as suas implementações. Você pode usar um Agent Pool auto-hospedado (que é um Agente DevOps que corre no local ou no próprio Azure Stack Hub) ou um Azure DevOps Server completamente auto-hospedado no local. O agente auto-alojado necessita apenas de conectividade de saída HTTPS (TCP/443) na Internet.
 
 O padrão pode usar um cluster Kubernetes (implantado e orquestrado com motor AKS) em cada instância do Azure Stack Hub. Inclui uma aplicação composta por um frontend, um serviço de backend de nível médio (por exemplo, MongoDB), e um Controlador ingress baseado em Nginx. Em vez de utilizar uma base de dados hospedada no cluster K8s, pode aproveitar as "lojas de dados externas". As opções de base de dados incluem MySQL, SQL Server ou qualquer tipo de base de dados hospedada fora do Azure Stack Hub ou em IaaS. Configurações como esta não estão no âmbito aqui.
 
@@ -375,7 +375,7 @@ O padrão pode usar um cluster Kubernetes (implantado e orquestrado com motor AK
 
 Existem soluções Microsoft Partner que podem alargar as capacidades do Azure Stack Hub. Estas soluções foram consideradas úteis nas implementações de aplicações em execução em clusters Kubernetes.  
 
-## <a name="storage-and-data-solutions"></a>Soluções de armazenamento e dados
+## <a name="storage-and-data-solutions"></a>Armazenamento e soluções de dados
 
 Como descrito em [considerações de Dados e armazenamento,](#data-and-storage-considerations)a Azure Stack Hub atualmente não tem uma solução nativa para replicar armazenamento em várias instâncias. Ao contrário do Azure, a capacidade de replicar o armazenamento em várias regiões não existe. Em Azure Stack Hub, cada instância é a sua própria nuvem distinta. No entanto, existem soluções disponíveis a partir de Microsoft Partners que permitem a replicação de armazenamento através do Azure Stack Hubs e do Azure. 
 
@@ -394,4 +394,4 @@ Para saber mais sobre conceitos introduzidos neste artigo:
 - [Escalas cruzadas](pattern-cross-cloud-scale.md) e [padrões de aplicativos geo-distribuídos](pattern-geo-distributed.md) no Azure Stack Hub.
 - [Microserviços arquitetura em Azure Kubernetes Service (AKS)](/azure/architecture/reference-architectures/microservices/aks).
 
-Quando estiver pronto para testar o exemplo da solução, continue com o guia de implantação do [cluster Kubernetes](solution-deployment-guide-highly-available-kubernetes.md)de alta disponibilidade. O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes.
+Quando estiver pronto para testar o exemplo da solução, continue com o guia de implantação do [cluster Kubernetes](/azure/architecture/hybrid/deployments/solution-deployment-guide-highly-available-kubernetes)de alta disponibilidade. O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes.

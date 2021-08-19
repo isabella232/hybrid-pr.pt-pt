@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: edbb608fbf8e5288f29572bfe4cca98ffb3cb8fc
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 5c8e3adb621ae4322bf6d60792fc307dbb24ff90
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911125"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281249"
 ---
 # <a name="cross-cloud-scaling-on-premises-data-pattern"></a>Padrão de escala de nuvem cruzada (dados no local)
 
@@ -34,18 +34,18 @@ O guia de implementação da solução permite-lhe implementar uma aplicação w
 
 Esta solução utiliza os seguintes componentes:
 
-| Camada | Componente | Description |
+| Camada | Componente | Descrição |
 |----------|-----------|-------------|
 | Azure | Serviço de Aplicações do Azure | [O Azure App Service](/azure/app-service/) permite-lhe construir e hospedar aplicações web, aplicações API RESTful e Funções Azure. Tudo na linguagem de programação à sua escolha, sem gerir infraestruturas. |
 | | Rede Virtual do Azure| [A Azure Virtual Network (VNet)](/azure/virtual-network/virtual-networks-overview) é o bloco de construção fundamental para redes privadas em Azure. O VNet permite que vários tipos de recursos Azure, como máquinas virtuais (VM), comuniquem-se de forma segura entre si, a internet e as redes no local. A solução demonstra igualmente a utilização de componentes adicionais de rede:<br>- aplicativos e sub-redes gateway.<br>- uma porta de entrada de rede local.<br>- um gateway de rede virtual, que funciona como uma ligação de gateway VPN local.<br>- um endereço IP público.<br>- uma ligação VPN ponto-a-local.<br>- Azure DNS para hospedar domínios DNS e fornecer resolução de nome. |
-| | Traffic Manager do Azure | [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) é um equilibrador de carga baseado em DNS. Permite controlar a distribuição do tráfego de utilizadores para pontos finais de serviço em diferentes datacenters. |
-| | Azure Application Insights | [Application Insights](/azure/azure-monitor/app/app-insights-overview) é um serviço extensível de Gestão de Desempenho de Aplicações para desenvolvedores web que construem e gerem aplicações em várias plataformas.|
+| | Gestor de Tráfego do Azure | [Gestor de Tráfego do Azure](/azure/traffic-manager/traffic-manager-overview) é um equilibrador de carga baseado em DNS. Permite controlar a distribuição do tráfego de utilizadores para pontos finais de serviço em diferentes datacenters. |
+| | Azure Application Insights | O Informações de [aplicações](/azure/azure-monitor/app/app-insights-overview) é um serviço extensível de Gestão de Desempenho de Aplicações para desenvolvedores web que construem e gerem aplicações em várias plataformas.|
 | | Funções do Azure | [As Funções Azure](/azure/azure-functions/) permitem executar o seu código num ambiente sem servidor sem ter de criar primeiro um VM ou publicar uma aplicação web. |
 | | Dimensionamento Automático do Azure | [Autoscale](/azure/azure-monitor/platform/autoscale-overview) é uma funcionalidade incorporada de Serviços cloud, VMs e aplicativos web. A funcionalidade permite que as aplicações executem o seu melhor quando a procura muda. As aplicações ajustar-se-ão aos picos de tráfego, notificando-o quando as métricas mudarem e escalarem conforme necessário. |
-| Azure Stack Hub | IaaS Compute | O Azure Stack Hub permite-lhe utilizar o mesmo modelo de aplicação, portal de self-service e APIs ativados pelo Azure. O Azure Stack Hub IaaS permite uma ampla gama de tecnologias de código aberto para implementações consistentes em nuvem híbrida. O exemplo da solução utiliza um VM do Servidor Windows para o SQL Server, por exemplo.|
+| Azure Stack Hub | IaaS Compute | O Azure Stack Hub permite-lhe utilizar o mesmo modelo de aplicação, portal de self-service e APIs ativados pelo Azure. O Azure Stack Hub IaaS permite uma ampla gama de tecnologias de código aberto para implementações consistentes em nuvem híbrida. O exemplo da solução utiliza um VM do servidor Windows para SQL Server, por exemplo.|
 | | Serviço de Aplicações do Azure | Tal como a aplicação web Azure, a solução utiliza o [Azure App Service no Azure Stack Hub](/azure-stack/operator/azure-stack-app-service-overview) para hospedar a aplicação web. |
-| | Redes | A Rede Virtual Azure Stack Hub funciona exatamente como a Rede Virtual Azure. Utiliza muitos dos mesmos componentes de rede, incluindo os anfitriões personalizados.
-| Serviços de DevOps do Azure | Inscrever-se | Configurar rapidamente a integração contínua para construção, teste e implantação. Para mais informações, consulte [Inscrever-se, iniciar súm na Azure DevOps](/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops). |
+| | Rede | A Rede Virtual Azure Stack Hub funciona exatamente como a Rede Virtual Azure. Utiliza muitos dos mesmos componentes de rede, incluindo os anfitriões personalizados.
+| Azure DevOps Services | Inscrever-se | Configurar rapidamente a integração contínua para construção, teste e implantação. Para mais informações, consulte [Inscrever-se, iniciar súm na Azure DevOps](/azure/devops/user-guide/sign-up-invite-teammates?view=azure-devops). |
 | | Pipelines do Azure | Utilize [gasodutos Azure](/azure/devops/pipelines/agents/agents?view=azure-devops) para integração contínua/entrega contínua. A Azure Pipelines permite-lhe gerir agentes e definições de construção e libertação hospedados. |
 | | Repositório de código | Aproveite vários repositórios de código para simplificar o seu oleoduto de desenvolvimento. Utilize repositórios de código existentes em GitHub, Bitbucket, Dropbox, OneDrive e Azure Repos. |
 
@@ -94,7 +94,7 @@ Um gasoduto híbrido CI/CD pode ajudá-lo:
 
 ### <a name="a-single-consistent-identity-management-solution"></a>Uma única e consistente solução de gestão de identidade
 
-O Azure Stack Hub trabalha com o Azure Ative Directory (Azure AD) e com os Serviços da Federação de Diretórios Ativos (ADFS). O Azure Stack Hub trabalha com a Azure AD em cenários conectados. Para ambientes que não têm conectividade, pode utilizar o ADFS como solução desconectada. Os principais do serviço são utilizados para garantir o acesso a apps, permitindo-lhes implementar ou configurar recursos através do Azure Resource Manager.
+O Azure Stack Hub trabalha com Azure Ative Directory (Azure AD) e Com serviços da Federação de Diretórios Ativos (ADFS). O Azure Stack Hub trabalha com a Azure AD em cenários conectados. Para ambientes que não têm conectividade, pode utilizar o ADFS como solução desconectada. Os principais do serviço são utilizados para garantir o acesso a apps, permitindo-lhes implementar ou configurar recursos através do Azure Resource Manager.
 
 ### <a name="security"></a>Segurança
 
@@ -137,4 +137,4 @@ Para saber mais sobre os tópicos introduzidos neste artigo:
 - Consulte [considerações de design de aplicativos Híbridos](overview-app-design-considerations.md) para saber mais sobre as melhores práticas e para responder a perguntas adicionais que possa ter.
 - Este padrão usa a família de produtos Azure Stack, incluindo o Azure Stack Hub. Veja a [família de produtos e soluções Azure Stack](/azure-stack) para saber mais sobre todo o portfólio de produtos e soluções.
 
-Quando estiver pronto para testar o exemplo da solução, continue com o [guia de implementação da solução de escala cruzada (dados no local).](solution-deployment-guide-cross-cloud-scaling-onprem-data.md) O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes.
+Quando estiver pronto para testar o exemplo da solução, continue com o [guia de implementação da solução de escala cruzada (dados no local).](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling-onprem-data) O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes.

@@ -7,12 +7,12 @@ ms.date: 11/05/2019
 ms.author: bryanla
 ms.reviewer: anajod
 ms.lastreviewed: 11/05/2019
-ms.openlocfilehash: a830f96e97c347cbbcc09a1b17f4836ecb6eb3e6
-ms.sourcegitcommit: bb3e40b210f86173568a47ba18c3cc50d4a40607
+ms.openlocfilehash: 90e0c177b5eaee4d223b4613e0b2ddf385fa799c
+ms.sourcegitcommit: df06f598da09074d387f5f765f7c4237af98fb59
 ms.translationtype: MT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84911136"
+ms.lasthandoff: 08/17/2021
+ms.locfileid: "122281266"
 ---
 # <a name="cross-cloud-scaling-pattern"></a>Padrão de escala de nuvem cruzada
 
@@ -119,8 +119,8 @@ Este padrão não é recomendado quando:
 
 Para saber mais sobre os tópicos introduzidos neste artigo:
 
-- Consulte a visão geral do [Azure Traffic Manager](/azure/traffic-manager/traffic-manager-overview) para saber mais sobre como funciona este equilibrador de carga de tráfego baseado em DNS.
+- Consulte a [visão geral Gestor de Tráfego do Azure](/azure/traffic-manager/traffic-manager-overview) para saber mais sobre como funciona este equilibrador de carga de tráfego baseado em DNS.
 - Consulte [considerações de design de aplicações híbridas](overview-app-design-considerations.md) para saber mais sobre as melhores práticas e para obter respostas para quaisquer perguntas adicionais.
 - Veja a [família de produtos e soluções Azure Stack](/azure-stack) para saber mais sobre todo o portfólio de produtos e soluções.
 
-Quando estiver pronto para testar o exemplo da solução, continue com o [guia de implementação da solução de escala cross-cloud](solution-deployment-guide-cross-cloud-scaling.md). O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes. Aprende-se a criar uma solução cross-cloud para fornecer um processo manualmente desencadeado para mudar de uma aplicação web hospedada do Azure Stack Hub para uma aplicação web hospedada aZure. Também aprende a utilizar autoscaling através do gestor de tráfego, garantindo uma utilidade de nuvem flexível e escalável quando está carregada.
+Quando estiver pronto para testar o exemplo da solução, continue com o [guia de implementação da solução de escala cross-cloud](/azure/architecture/hybrid/deployments/solution-deployment-guide-cross-cloud-scaling). O guia de implantação fornece instruções passo a passo para a implantação e teste dos seus componentes. Aprende-se a criar uma solução cross-cloud para fornecer um processo manualmente desencadeado para mudar de uma aplicação web hospedada do Azure Stack Hub para uma aplicação web hospedada aZure. Também aprende a utilizar autoscaling através do gestor de tráfego, garantindo uma utilidade de nuvem flexível e escalável quando está carregada.
